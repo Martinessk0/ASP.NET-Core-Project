@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kvpN+1y1FGH1MPG6aZ9szKQD5BSuwKCvYtwKfXNSsjeW4LA6UgmLqMo4AwSHKyMFJCH/Bszk1eYJXrNfPG41xQ==",
+  "dgSpecHash": "6xCaxyOhugKhOGF8KesFQiCBKM0X/0X5uKsL7lOAAZ6CrGz6lcMS+lM/oCQlsLGqcHUF3g6pu2QwknNbQvmkjg==",
   "success": true,
-  "projectFilePath": "E:\\GitHub\\ASP.NET Core Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
+  "projectFilePath": "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marto\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marto\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.7\\microsoft.aspnetcore.cryptography.internal.6.0.7.nupkg.sha512",

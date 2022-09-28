@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GitHub\\ASP.NET Core Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj": {}
+    "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj": {}
   },
   "projects": {
-    "E:\\GitHub\\ASP.NET Core Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj": {
+    "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GitHub\\ASP.NET Core Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
+        "projectUniqueName": "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
         "projectName": "BurgerManiaApp",
-        "projectPath": "E:\\GitHub\\ASP.NET Core Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
+        "projectPath": "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
         "packagesPath": "C:\\Users\\marto\\.nuget\\packages\\",
-        "outputPath": "E:\\GitHub\\ASP.NET Core Project\\BurgerManiaApp\\BurgerManiaApp\\obj\\",
+        "outputPath": "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marto\\AppData\\Roaming\\NuGet\\NuGet.Config",
