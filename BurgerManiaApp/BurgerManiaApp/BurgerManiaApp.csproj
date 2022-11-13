@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Core\Contracts\" />
+    <Folder Include="Core\Services\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
