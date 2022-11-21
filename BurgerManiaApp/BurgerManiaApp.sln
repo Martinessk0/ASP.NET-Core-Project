@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerManiaApp", "BurgerManiaApp\BurgerManiaApp.csproj", "{1A7315B5-BEE3-478F-9D77-CB5CC88FFC54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BurgerManiaApp", "BurgerManiaApp\BurgerManiaApp.csproj", "{1A7315B5-BEE3-478F-9D77-CB5CC88FFC54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerManiaApp.Core", "BurgerMania.Core\BurgerManiaApp.Core.csproj", "{810B0378-345A-4387-9333-5CEC7DBBB647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerManiaApp.Infrastructure", "BurgerMania.Infrastructure\BurgerManiaApp.Infrastructure.csproj", "{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{1A7315B5-BEE3-478F-9D77-CB5CC88FFC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A7315B5-BEE3-478F-9D77-CB5CC88FFC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A7315B5-BEE3-478F-9D77-CB5CC88FFC54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810B0378-345A-4387-9333-5CEC7DBBB647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810B0378-345A-4387-9333-5CEC7DBBB647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810B0378-345A-4387-9333-5CEC7DBBB647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810B0378-345A-4387-9333-5CEC7DBBB647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

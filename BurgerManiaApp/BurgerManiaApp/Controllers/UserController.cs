@@ -1,4 +1,4 @@
-﻿using BurgerManiaApp.Data.Entities.Account;
+﻿using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using BurgerManiaApp.Models.AccountViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

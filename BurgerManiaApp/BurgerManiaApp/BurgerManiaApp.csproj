@@ -16,9 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Core\Contracts\" />
-    <Folder Include="Core\Services\" />
+    <Folder Include="ModelBinders\" />
     <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BurgerMania.Core\BurgerManiaApp.Core.csproj" />
   </ItemGroup>
 
 </Project>
