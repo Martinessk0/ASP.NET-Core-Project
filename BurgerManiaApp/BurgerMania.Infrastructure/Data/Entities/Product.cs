@@ -37,5 +37,15 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
 
         [ForeignKey(nameof(CategoryId))]
         public Category Category { get; set; } = null!;
+
+        [Required]
+        public bool IsActive { get; set; } = true;
+
+        [Required]
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        [Required]
+        public DateTime ModifiedAt { get; set; } = DateTime.Now;
     }
 }

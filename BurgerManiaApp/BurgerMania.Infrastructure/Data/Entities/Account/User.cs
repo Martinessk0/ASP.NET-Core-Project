@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using BurgerManiaApp.Infrastructure.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace BurgerManiaApp.Infractructure.Data.Entities.Account
@@ -12,7 +13,9 @@ namespace BurgerManiaApp.Infractructure.Data.Entities.Account
         [StringLength(60)] 
         public string LastName { get; set; } = null!;
         [StringLength(60)]
-        public string Address { get; set; } 
+        public string Address { get; set; }
+
+        public List<UserOrder> UserOrders { get; set; } = new List<UserOrder>();
 
     }
 }
