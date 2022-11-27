@@ -13,7 +13,7 @@ namespace BurgerManiaApp.Infractructure.Data.Entities.Account
         [StringLength(60)] 
         public string LastName { get; set; } = null!;
         [StringLength(60)]
-        public string Address { get; set; }
+        public string Address { get; set; } = null!;
 
         public List<UserOrder> UserOrders { get; set; } = new List<UserOrder>();
 

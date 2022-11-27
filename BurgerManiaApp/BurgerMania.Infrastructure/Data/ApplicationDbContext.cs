@@ -1,4 +1,5 @@
 ﻿using BurgerManiaApp.Infractructure.Data.Entities.Account;
+using BurgerManiaApp.Infrastructure.Data.Configuration;
 using BurgerManiaApp.Infrastructure.Data.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -29,11 +30,9 @@ namespace BurgerManiaApp.Infrastructure.Data
                    um.OrderId
                });
 
-            
-               
-                
-            //builder.ApplyConfiguration(new UserConfiguration());
-            //builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new OrderStatusConfiguration());
 
             base.OnModelCreating(builder);
         }

@@ -15,9 +15,6 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         [Required]
         public string Name { get; set; } = null!;
 
-        [Required]
-        public string Description { get; set; } = null!;
-
         public List<Order> Orders { get; set; } = new List<Order>();
     }
 }

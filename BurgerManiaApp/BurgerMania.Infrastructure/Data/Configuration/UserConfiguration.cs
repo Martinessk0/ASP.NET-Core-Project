@@ -1,52 +1,58 @@
-﻿//using BurgerManiaApp.Data.Entities.Account;
-//using Microsoft.AspNetCore.Identity;
-//using Microsoft.EntityFrameworkCore;
-//using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using BurgerManiaApp.Infractructure.Data.Entities.Account;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-//namespace BurgerManiaApp.Infrastructure.Data.Configuration
-//{
-//    public class UserConfiguration : IEntityTypeConfiguration<User>
-//    {
-//        public void Configure(EntityTypeBuilder<User> builder)
-//        {
-//            builder.HasData(SeedUsers());
-//        }
+namespace BurgerManiaApp.Infrastructure.Data.Configuration
+{
+    public class UserConfiguration : IEntityTypeConfiguration<User>
+    {
+        public void Configure(EntityTypeBuilder<User> builder)
+        {
+            builder.HasData(SeedUsers());
+        }
 
-//        private List<User> SeedUsers()
-//        {
-//            var users = new List<User>();
-//            var hasher = new PasswordHasher<User>();
+        private List<User> SeedUsers()
+        {
+            var users = new List<User>();
+            var hasher = new PasswordHasher<User>();
 
-//            var user = new User()
-//            {
-//                Id = "dea12856-c198-4129-b3f3-b893d8395082",
-//                UserName = "agent@mail.com",
-//                NormalizedUserName = "agent@mail.com",
-//                Email = "agent@mail.com",
-//                NormalizedEmail = "agent@mail.com"
-//            };
+            var user = new User()
+            {
+                Id = "fe0f0881-a76d-4cd6-9a79-3f6adbd5f82f",
+                FirstName = "Admin",
+                LastName = "Adminov",
+                UserName = "Admin",
+                NormalizedUserName = "admin",
+                Email = "admin@gmail.com",
+                NormalizedEmail = "admin@gmail.com",
+                Address = "Admin Street 6"
+            };
 
-//            user.PasswordHash =
-//                 hasher.HashPassword(user, "agent123");
+            user.PasswordHash =
+                 hasher.HashPassword(user, "Admin123/");
 
-//            users.Add(user);
+            users.Add(user);
 
-//            user = new User()
-//            {
-//                Id = "6d5800ce-d726-4fc8-83d9-d6b3ac1f591e",
-//                UserName = "guest@mail.com",
-//                NormalizedUserName = "guest@mail.com",
-//                Email = "guest@mail.com",
-//                NormalizedEmail = "guest@mail.com"
-//            };
+            user = new User()
+            {
+                Id = "06552aa5-bcbe-49ef-ac65-fd84699d0d3e",
+                FirstName = "Guest",
+                LastName = "Guestov",
+                UserName = "Guest",
+                NormalizedUserName = "guest",
+                Email = "guest@gmail.com",
+                NormalizedEmail = "guest@gmail.com",
+                Address = "Guest Street 3"
+            };
 
-//            user.PasswordHash =
-//            hasher.HashPassword(user, "guest123");
+            user.PasswordHash =
+            hasher.HashPassword(user, "Guest123/");
 
-//            users.Add(user);
+            users.Add(user);
 
-//            return users;
-//        }
+            return users;
+        }
 
-//    }
-//}
+    }
+}
