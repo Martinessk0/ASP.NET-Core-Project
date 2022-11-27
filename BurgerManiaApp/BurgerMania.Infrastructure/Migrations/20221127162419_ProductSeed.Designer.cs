@@ -4,6 +4,7 @@ using BurgerManiaApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BurgerManiaApp.Infractructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127162419_ProductSeed")]
+    partial class ProductSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,7 +109,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             Id = "fe0f0881-a76d-4cd6-9a79-3f6adbd5f82f",
                             AccessFailedCount = 0,
                             Address = "Admin Street 6",
-                            ConcurrencyStamp = "1724f7ed-8bd8-4908-a8e0-7c240b65cc97",
+                            ConcurrencyStamp = "ace8aa4a-dcb0-427f-b6c1-b63282a53658",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -115,9 +117,9 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMz49qo/AsQ5iNdbIYnd9j5E3wSAO2WqzPKmFwQNzAdR/8UI5lm/1R/Z9+guqpeVSw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMGSDSxKARfEFtCWXugIsoWRlrbPrVFjZD4Fxl5Dm7JtSg0WDPIlaJ/z5J+AgsMpjg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c715d2b9-fc62-41a2-9cfa-ce762e92d2e6",
+                            SecurityStamp = "e78cdafe-e721-4bd1-8808-9dace38eab11",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         },
@@ -126,7 +128,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             Id = "06552aa5-bcbe-49ef-ac65-fd84699d0d3e",
                             AccessFailedCount = 0,
                             Address = "Guest Street 3",
-                            ConcurrencyStamp = "82bdd7a0-c83e-4de0-82a4-cdf714975e0b",
+                            ConcurrencyStamp = "dcc4a3e7-1814-4528-b58f-545d7da42c3f",
                             Email = "guest@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Guest",
@@ -134,9 +136,9 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "GUEST@GMAIL.COM",
                             NormalizedUserName = "GUEST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA6jyBR4IdsON32ujHIR09jyJIur2i0k40r5sdBoT8sCTbwY2hsebpTy34J4/zFv2Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEytNs6p8B8vPaGuhYinqAD/hQVjY/qiVkq1daol0dfYtsRrNnYxrzPTQgFsr0KgEQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "086c115d-b24f-44a1-9b37-d25d43f92ada",
+                            SecurityStamp = "ac93785f-0c10-4b6e-90d5-247832427abf",
                             TwoFactorEnabled = false,
                             UserName = "Guest"
                         });
@@ -307,44 +309,6 @@ namespace BurgerManiaApp.Infractructure.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 11, 27, 18, 27, 22, 184, DateTimeKind.Local).AddTicks(99),
-                            Description = "Spicy Burger",
-                            ImageUrl = "https://wickedkitchen.com/wp-content/uploads/2022/05/Wicked-jalapeno-burger.jpeg",
-                            IsActive = true,
-                            ModifiedAt = new DateTime(2022, 11, 27, 18, 27, 22, 184, DateTimeKind.Local).AddTicks(135),
-                            Name = "Spicy Burger",
-                            Price = 7m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 11, 27, 18, 27, 22, 184, DateTimeKind.Local).AddTicks(144),
-                            Description = "Coca-Cola",
-                            ImageUrl = "https://cdncloudcart.com/16372/products/images/68308/coca-cola-bezalkoholna-napitka-ken-250-ml-image_629659e5b307d_1920x1920.jpeg?1654020601",
-                            IsActive = true,
-                            ModifiedAt = new DateTime(2022, 11, 27, 18, 27, 22, 184, DateTimeKind.Local).AddTicks(145),
-                            Name = "Coca-Cola",
-                            Price = 1m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 11, 27, 18, 27, 22, 184, DateTimeKind.Local).AddTicks(150),
-                            Description = "Salad with Iceberg lettuce",
-                            ImageUrl = "https://eatsomethingvegan.com/wp-content/uploads/2021/11/Iceberg-Lettuce-Salad-5-681x1024.jpg",
-                            IsActive = true,
-                            ModifiedAt = new DateTime(2022, 11, 27, 18, 27, 22, 184, DateTimeKind.Local).AddTicks(151),
-                            Name = "Salad with Iceberg lettuce",
-                            Price = 7m
-                        });
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.ShoppingCart", b =>

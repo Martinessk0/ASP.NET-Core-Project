@@ -23,9 +23,9 @@ namespace BurgerManiaApp.Infrastructure.Data.Configuration
                 FirstName = "Admin",
                 LastName = "Adminov",
                 UserName = "Admin",
-                NormalizedUserName = "admin",
+                NormalizedUserName = "ADMIN",
                 Email = "admin@gmail.com",
-                NormalizedEmail = "admin@gmail.com",
+                NormalizedEmail = "ADMIN@GMAIL.COM",
                 Address = "Admin Street 6"
             };
 
@@ -40,9 +40,9 @@ namespace BurgerManiaApp.Infrastructure.Data.Configuration
                 FirstName = "Guest",
                 LastName = "Guestov",
                 UserName = "Guest",
-                NormalizedUserName = "guest",
+                NormalizedUserName = "GUEST",
                 Email = "guest@gmail.com",
-                NormalizedEmail = "guest@gmail.com",
+                NormalizedEmail = "GUEST@GMAIL.COM",
                 Address = "Guest Street 3"
             };
 

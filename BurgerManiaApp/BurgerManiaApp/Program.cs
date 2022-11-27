@@ -1,5 +1,6 @@
 using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using BurgerManiaApp.Infrastructure.Data;
+using BurgerManiaApp.ModelBinder;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -16,7 +17,11 @@ builder.Services.AddDefaultIdentity<User>(options =>
 })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddMvcOptions(options =>
+    {
+        options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+    });
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

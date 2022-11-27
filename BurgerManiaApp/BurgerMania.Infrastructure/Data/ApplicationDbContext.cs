@@ -33,6 +33,7 @@ namespace BurgerManiaApp.Infrastructure.Data
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new OrderStatusConfiguration());
+            builder.ApplyConfiguration(new ProductConfiguration());
 
             base.OnModelCreating(builder);
         }
