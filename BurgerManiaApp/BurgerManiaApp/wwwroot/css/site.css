@@ -16,3 +16,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.imgSize {
+    width: 400px;
+    height: 450px;
+    padding-left: 10px;
+    padding-top: 15px;
+}

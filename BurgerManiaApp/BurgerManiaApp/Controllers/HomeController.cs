@@ -18,7 +18,7 @@ namespace BurgerManiaApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var model = await productService.LastThreeProducts();
+            var model = await productService.LastThreeBurgers();
 
             return View(model);
         }
