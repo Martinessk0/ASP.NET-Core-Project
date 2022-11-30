@@ -4,8 +4,7 @@
     <div class="card mb-3">
         <img class="card-img-top" src="@Model.ImageUrl" alt="Product Image">
         <div class="card-body text-center">
-            <h4>@Model.Name</h4>
-            @*<h6>Address: <b>@Model.Address</b></h6>*@
+            <h4>@Model.Name</h4>        
             <h6>
                 Price:
                 <b>@String.Format("{0:f2}", Model.Price) BGN</b>
@@ -21,20 +20,10 @@
                 <a asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id"
                class="btn btn-danger">Delete</a>
                 <p></p>
-                @*@if (!Model.IsRented)
-                {
-                    <form class="input-group-sm" asp-controller="Product"
-                  asp-action="Rent" asp-route-id="@Model.Id" method="post">
-                        <input class="btn btn-primary" type="submit" value="Rent" />
-                    </form>
-                }
-                else
-                {
-                    <form asp-controller="Product" asp-action="Leave"
-                  asp-route-id="@Model.Id" method="post">
-                        <input class="btn btn-primary" type="submit" value="Leave" />
-                    </form>
-                }*@
+                <form class="input-group-sm" asp-controller="Product"
+                  asp-action="AddToCart" asp-route-id="@Model.Id" method="post">
+                    <input class="btn btn-primary" type="submit" value="Add To Cart" />
+                </form>
             }
         </div>
     </div>

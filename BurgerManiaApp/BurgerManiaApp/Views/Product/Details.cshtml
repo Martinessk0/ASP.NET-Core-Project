@@ -22,7 +22,10 @@
                         Price:
                         <b>@String.Format("{0:f2}", Model.Price) BGN</b>
                     </p>
-                    <p>@Model.Description</p>
+                    <p>
+                        Description:
+                        @Model.Description
+                    </p>
                     <p>Category: <b>@Model.Category</b></p>
                     @*<p><i>(@(Model.IsRented ? "Rented" : "Not Rented"))</i></p>*@
                     <div class="form-inline">
@@ -49,13 +52,6 @@
                         }
                     </div>
                     <p></p>
-                    @*<div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                    <h5 class="card-title">Agent Info</h5>
-                    <p class="card-text">Email:  @Model.Agent.Email</p>
-                    <p class="card-text">Phone Number: @Model.Agent.PhoneNumber</p>
-                    </div>
-                    </div>*@
                 </div>
             </div>
         </div>

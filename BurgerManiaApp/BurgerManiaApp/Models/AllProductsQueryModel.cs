@@ -4,7 +4,7 @@ namespace BurgerManiaApp.Models
 {
     public class AllProductsQueryModel
     {
-        public const int ProductPerPage = 3;
+        public const int ProductPerPage = 6;
 
         public string? Category { get; set; }
 

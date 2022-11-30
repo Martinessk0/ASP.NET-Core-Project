@@ -2,17 +2,22 @@
 using BurgerManiaApp.Core.Models.Products;
 using BurgerManiaApp.Infractructure.Data.Common;
 using BurgerManiaApp.Infrastructure.Data.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace BurgerManiaApp.Core.Services
 {
     public class ProductService : IProductService
     {
         private readonly IRepository repo;
+        private readonly ILogger logger;
 
-        public ProductService(IRepository repo)
+        public ProductService(IRepository repo,
+            ILogger<ProductService> _logger)
         {
             this.repo = repo;
+            logger = _logger;
         }
         public async Task<ProductQueryModel> All(string? category = null, string? searchTerm = null, ProductSorting sorting = ProductSorting.Newest, int currentPage = 1, int housesPerPage = 1)
         {
@@ -109,6 +114,75 @@ namespace BurgerManiaApp.Core.Services
                 })
                 .Take(3)
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<ProductCategoryModel>> AllCategories()
+        {
+            return await repo.AllReadonly<Category>()
+               .OrderBy(c => c.Name)
+               .Select(c => new ProductCategoryModel()
+               {
+                   Id = c.Id,
+                   Name = c.Name
+               })
+               .ToListAsync();
+        }
+
+        public async Task<int> Create(ProductModel model)
+        {
+            var product = new Product()
+            {
+                CategoryId = model.CategoryId,
+                Description = model.Description,
+                ImageUrl = model.ImageUrl,
+                Price = model.Price,
+                Name = model.Name,
+            };
+
+            try
+            {
+                await repo.AddAsync(product);
+                await repo.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(nameof(Create), ex);
+                throw new ApplicationException("Database failed to save info", ex);
+            }
+
+            return product.Id;
+        }
+
+        public async Task<bool> CategoryExists(int categoryId)
+        {
+            return await repo.AllReadonly<Category>()
+                .AnyAsync(c => c.Id == categoryId);
+        }
+
+        public async Task<int> GetProductCategoryId(int productId)
+        {
+            return (await repo.GetByIdAsync<Product>(productId)).CategoryId;
+        }
+
+        public async Task Edit(int productId, ProductModel model)
+        {
+            var house = await repo.GetByIdAsync<Product>(productId);
+
+            house.Description = model.Description;
+            house.ImageUrl = model.ImageUrl;
+            house.Price = model.Price;
+            house.Name = model.Name;
+            house.CategoryId = model.CategoryId;
+
+            await repo.SaveChangesAsync();
+        }
+
+        public async Task Delete(int id)
+        {
+            var product = await repo.GetByIdAsync<Product>(id);
+            product.IsActive = false;
+
+            await repo.SaveChangesAsync();
         }
     }
 }

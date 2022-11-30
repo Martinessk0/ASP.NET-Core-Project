@@ -1,6 +1,8 @@
-﻿namespace BurgerManiaApp.Core.Models.Products
+﻿using BurgerManiaApp.Core.Contracts;
+
+namespace BurgerManiaApp.Core.Models.Products
 {
-    public class ProductHomePageModel
+    public class ProductHomePageModel : IProductModel
     {
         public int Id { get; set; }
 

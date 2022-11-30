@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BurgerManiaApp.Core.Contracts;
+using System.ComponentModel.DataAnnotations;
 
 namespace BurgerManiaApp.Core.Models.Products
 {
-    public class ProductServiceModel
+    public class ProductServiceModel : IProductModel
     {
         public int Id { get; init; }
 

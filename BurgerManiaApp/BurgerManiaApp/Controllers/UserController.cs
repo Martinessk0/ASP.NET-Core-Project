@@ -49,7 +49,8 @@ namespace BurgerManiaApp.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
-                UserName = model.UserName
+                UserName = model.UserName,
+                Address = model.Address,
             };
 
             var result = await userManager.CreateAsync(user, model.Password);
