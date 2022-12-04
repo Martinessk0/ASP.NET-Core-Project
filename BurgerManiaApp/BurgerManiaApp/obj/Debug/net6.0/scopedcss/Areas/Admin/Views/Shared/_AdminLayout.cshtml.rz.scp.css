@@ -1,0 +1,46 @@
+
+a.navbar-brand[b-ae6nnukrax] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-ae6nnukrax] {
+  color: #0077cc;
+}
+
+.btn-primary[b-ae6nnukrax] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-ae6nnukrax], .nav-pills .show > .nav-link[b-ae6nnukrax] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-ae6nnukrax] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-ae6nnukrax] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-ae6nnukrax] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-ae6nnukrax] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-ae6nnukrax] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

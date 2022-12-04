@@ -120,13 +120,13 @@ namespace BurgerManiaApp.Controllers
 
             return RedirectToAction("Index", "Home");
         }
-       
+
         public async Task<IActionResult> CreateRoles()
         {
             await roleManager.CreateAsync(new IdentityRole(RoleConstants.Deliverer));
             await roleManager.CreateAsync(new IdentityRole(RoleConstants.Administrator));
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home" );
         }
         
         public async Task<IActionResult> AddUserToRoles()
