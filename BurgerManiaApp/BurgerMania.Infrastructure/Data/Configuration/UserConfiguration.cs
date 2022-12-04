@@ -51,6 +51,23 @@ namespace BurgerManiaApp.Infrastructure.Data.Configuration
 
             users.Add(user);
 
+            user = new User()
+            {
+                Id = "f9bf120c-fafd-48d1-a4c6-330f99ad8a67",
+                FirstName = "Deliverer",
+                LastName = "Delivrov",
+                UserName = "Deliverer",
+                NormalizedUserName = "DELIVERER",
+                Email = "deliverer@gmail.com",
+                NormalizedEmail = "DELIVERER@GMAIL.COM",
+                Address = "DELIVERER Street 5"
+            };
+
+            user.PasswordHash =
+            hasher.HashPassword(user, "Deliverer123/");
+
+            users.Add(user);
+
             return users;
         }
 

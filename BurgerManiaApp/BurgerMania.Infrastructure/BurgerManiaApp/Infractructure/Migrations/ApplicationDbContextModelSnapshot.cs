@@ -163,7 +163,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.Category", b =>
@@ -181,7 +181,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -221,7 +221,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("OrderStatusId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.OrderStatus", b =>
@@ -238,7 +238,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses");
+                    b.ToTable("OrderStatuses", (string)null);
 
                     b.HasData(
                         new
@@ -306,7 +306,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
 
                     b.HasData(
                         new
@@ -368,7 +368,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ShoppingCarts");
+                    b.ToTable("ShoppingCarts", (string)null);
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.UserOrder", b =>
@@ -383,7 +383,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("UserOrder");
+                    b.ToTable("UserOrder", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

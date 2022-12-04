@@ -1,4 +1,5 @@
-﻿using BurgerManiaApp.Infractructure.Data.Entities.Account;
+﻿using BurgerManiaApp.Core.Constants;
+using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using BurgerManiaApp.Models.AccountViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,12 +14,16 @@ namespace BurgerManiaApp.Controllers
 
         private readonly SignInManager<User> signInManager;
 
+        private readonly RoleManager<IdentityRole> roleManager;
+
         public UserController(
             UserManager<User> _userManager,
-            SignInManager<User> _signInManager)
+            SignInManager<User> _signInManager,
+            RoleManager<IdentityRole> _roleManager)
         {
             userManager = _userManager;
             signInManager = _signInManager;
+            roleManager = _roleManager;
         }
 
         [HttpGet]
@@ -43,6 +48,7 @@ namespace BurgerManiaApp.Controllers
             {
                 return View(model);
             }
+            
 
             var user = new User()
             {
@@ -111,6 +117,25 @@ namespace BurgerManiaApp.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
+        }
+       
+        public async Task<IActionResult> CreateRoles()
+        {
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Deliverer));
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Administrator));
+
+            return RedirectToAction("Index", "Home");
+        }
+        
+        public async Task<IActionResult> AddUserToRoles()
+        {
+            string email1 = "admin@gmail.com";
+
+            var user = await userManager.FindByEmailAsync(email1);
+
+            await userManager.AddToRoleAsync(user, RoleConstants.Administrator);
 
             return RedirectToAction("Index", "Home");
         }

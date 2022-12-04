@@ -1,6 +1,7 @@
 using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using BurgerManiaApp.Infrastructure.Data;
 using BurgerManiaApp.ModelBinder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -15,6 +16,7 @@ builder.Services.AddDefaultIdentity<User>(options =>
     options.SignIn.RequireConfirmedAccount = false;
     options.Password.RequiredLength = 5;
 })
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews()
