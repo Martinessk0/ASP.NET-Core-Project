@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BurgerManiaApp", "BurgerManiaApp\BurgerManiaApp.csproj", "{1A7315B5-BEE3-478F-9D77-CB5CC88FFC54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerManiaApp.Core", "BurgerMania.Core\BurgerManiaApp.Core.csproj", "{810B0378-345A-4387-9333-5CEC7DBBB647}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BurgerManiaApp.Core", "BurgerMania.Core\BurgerManiaApp.Core.csproj", "{810B0378-345A-4387-9333-5CEC7DBBB647}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerManiaApp.Infrastructure", "BurgerMania.Infrastructure\BurgerManiaApp.Infrastructure.csproj", "{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BurgerManiaApp.Infrastructure", "BurgerMania.Infrastructure\BurgerManiaApp.Infrastructure.csproj", "{1FA89795-8A3E-4C9F-B01B-48782DA35BEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,8 +14,8 @@
                         Come and join us for lunch or dinner
                     </p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                        <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" asp-area="" asp-controller="Product" asp-action="All">Get Started</a>  
+                        <a class="btn btn-outline-light btn-lg px-4" asp-area="" asp-controller="Product" asp-action="Details"> Learn More</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                                  src="@product.ImageUrl" alt="@product.Name">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>
-                                        <a class="btn btn-primary" asp-controller="Product" asp-action="Details"
+                                        <a class="btn btn-primary" asp-area="" asp-controller="Product" asp-action="Details"
                                        asp-route-id="@product.Id"> @product.Name</a>
                                     </h5>
                                 </div>

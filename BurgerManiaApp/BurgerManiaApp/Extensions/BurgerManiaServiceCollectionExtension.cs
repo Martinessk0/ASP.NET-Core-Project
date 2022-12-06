@@ -1,5 +1,7 @@
 ﻿using BurgerManiaApp.Core.Contracts;
+using BurgerManiaApp.Core.Contracts.Admin;
 using BurgerManiaApp.Core.Services;
+using BurgerManiaApp.Core.Services.Admin;
 using BurgerManiaApp.Infractructure.Data.Common;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -10,6 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.AddScoped<IRepository, Repository>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUserService, UserService>();
 
             return services;
         }

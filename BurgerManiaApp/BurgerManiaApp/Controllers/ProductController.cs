@@ -1,7 +1,6 @@
-﻿using BurgerManiaApp.Core.Contracts;
-using BurgerManiaApp.Core.Extensions;
+﻿using static BurgerManiaApp.Areas.Admin.Constants.AdminConstants;
+using BurgerManiaApp.Core.Contracts;
 using BurgerManiaApp.Core.Models.Products;
-using BurgerManiaApp.Extensions;
 using BurgerManiaApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +38,11 @@ namespace BurgerManiaApp.Controllers
 
         [HttpGet]
         public async Task<IActionResult> Add()
-        {           
+        {
+            if (!(this.User.IsInRole(AdminRoleName)))
+            {
+                return RedirectToAction("AccessDenied", "Error");
+            }
 
             var model = new ProductModel()
             {
@@ -52,6 +55,10 @@ namespace BurgerManiaApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(ProductModel model)
         {
+            if (!(this.User.IsInRole(AdminRoleName)))
+            {
+                return RedirectToAction("AccessDenied", "Error");
+            }
 
             if ((await productService.CategoryExists(model.CategoryId)) == false)
             {
@@ -73,9 +80,15 @@ namespace BurgerManiaApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
+
             if ((await productService.Exists(id)) == false)
             {
                 return RedirectToAction(nameof(All));
+            }
+
+            if (!(this.User.IsInRole(AdminRoleName)))
+            {
+                return RedirectToAction("AccessDenied", "Error");
             }
 
             var house = await productService.ProductDetailsById(id);
@@ -99,11 +112,16 @@ namespace BurgerManiaApp.Controllers
         {
             if ((await productService.Exists(model.Id)) == false)
             {
-                ModelState.AddModelError("", "House does not exist");
+                ModelState.AddModelError("", "Product does not exist");
 
                 model.ProductCategories = await productService.AllCategories();
 
                 return View(model);
+            }
+
+            if (!(this.User.IsInRole(AdminRoleName)))
+            {
+                return RedirectToAction("AccessDenied", "Error");
             }
 
             if ((await productService.CategoryExists(model.CategoryId)) == false)
@@ -133,6 +151,11 @@ namespace BurgerManiaApp.Controllers
                 return RedirectToAction(nameof(All));
             }
 
+            if (!(this.User.IsInRole(AdminRoleName)))
+            {
+                return RedirectToAction("AccessDenied", "Error");
+            }
+
             var product = await productService.ProductDetailsById(id);
             var model = new ProductDetailsModel()
             {
@@ -152,7 +175,12 @@ namespace BurgerManiaApp.Controllers
             {
                 return RedirectToAction(nameof(All));
             }
-         
+
+            if (!(this.User.IsInRole(AdminRoleName)))
+            {
+                return RedirectToAction("AccessDenied", "Error");
+            }
+
             await productService.Delete(id);
 
             return RedirectToAction(nameof(All));

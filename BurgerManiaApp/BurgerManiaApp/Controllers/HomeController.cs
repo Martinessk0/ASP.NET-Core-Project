@@ -2,6 +2,7 @@
 using BurgerManiaApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using static BurgerManiaApp.Areas.Admin.Constants.AdminConstants;
 
 namespace BurgerManiaApp.Controllers
 {
@@ -18,6 +19,11 @@ namespace BurgerManiaApp.Controllers
 
         public async Task<IActionResult> Index()
         {
+            if (this.User.IsInRole(AdminRoleName))
+            {
+                return RedirectToAction("Index", "Home", new { area = "Admin" });
+            }
+
             var model = await productService.LastThreeBurgers();
 
             return View(model);
