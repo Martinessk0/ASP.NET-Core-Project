@@ -23,7 +23,7 @@
             @if (this.User.Identity.IsAuthenticated)
             {
                 <p></p>
-                <form class="input-group-sm" asp-area="" asp-controller="Product"
+                <form class="input-group-sm" asp-area="" asp-controller="Cart"
                   asp-action="AddToCart" asp-route-id="@Model.Id" method="post">
                     <input class="btn btn-primary" type="submit" value="Add To Cart" />
                 </form>

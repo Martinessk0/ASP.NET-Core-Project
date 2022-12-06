@@ -31,7 +31,7 @@ namespace BurgerManiaApp.Controllers
 
             query.TotalProductsCount = result.TotalProductsCount;
             query.Categories = await productService.AllCategoriesNames();
-            query.Houses = result.Products;
+            query.Products = result.Products;
 
             return View(query);
         }

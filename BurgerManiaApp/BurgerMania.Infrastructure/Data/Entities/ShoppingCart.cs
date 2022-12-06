@@ -16,7 +16,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         public int CartItemId { get; set; }
 
         [ForeignKey(nameof(CartItemId))]
-        public CartItem CartItem { get; set; }
+        public IEnumerable<CartItem> CartItem { get; set; } = new List<CartItem>();
 
         [Required]
         public string UserId { get; set; } = null!;

@@ -17,5 +17,6 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         public Product Product { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
+        public bool IsActive { get; set; }
     }
 }

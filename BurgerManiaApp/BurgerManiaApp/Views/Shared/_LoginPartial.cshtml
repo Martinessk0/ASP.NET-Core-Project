@@ -6,14 +6,19 @@
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
+       
         <li class="nav-item">
             <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+        </li>
+        <li class="nav-item">
+            <a class="" asp-area="" asp-controller="Cart" asp-action="Index"><img class="cartImgSize" src="/images/shopping-cart.png"></a>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="" asp-controller="User" asp-action="Logout" asp-route-id="@UserManager.GetUserId(User)">
                 <button type="submit" class="nav-link btn btn-link ">Logout</button>
             </form>
         </li>
+        
     }
     else
     {

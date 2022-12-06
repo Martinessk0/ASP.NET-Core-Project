@@ -18,6 +18,6 @@ namespace BurgerManiaApp.Models
 
         public IEnumerable<string> Categories { get; set; } = Enumerable.Empty<string>();
 
-        public IEnumerable<ProductServiceModel> Houses { get; set; } = Enumerable.Empty<ProductServiceModel>();
+        public IEnumerable<ProductServiceModel> Products { get; set; } = Enumerable.Empty<ProductServiceModel>();
     }
 }

@@ -11,6 +11,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+
+builder.Services.AddControllersWithViews();
+
+
 builder.Services.AddDefaultIdentity<User>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
@@ -68,5 +72,6 @@ app.UseEndpoints(endpoints =>
 
     endpoints.MapRazorPages();
 });
+
 
 app.Run();

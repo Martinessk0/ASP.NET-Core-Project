@@ -74,7 +74,7 @@
 
             @{
                 var shouldButtonBeDisabled = Model.CurrentPage == maxPage ||
-                !Model.Houses.Any();
+                !Model.Products.Any();
             }
 
             <div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
@@ -89,13 +89,13 @@
             </div>
         </div>
 
-        @if (!Model.Houses.Any())
+        @if (!Model.Products.Any())
         {
             <h2 class="text-center">No products were found according to the specified criteria!</h2>
         }
 
         <div class="row">
-            @foreach (var house in Model.Houses)
+            @foreach (var house in Model.Products)
             {
                 <partial name="_ProductPartial" model="@house" />
             }

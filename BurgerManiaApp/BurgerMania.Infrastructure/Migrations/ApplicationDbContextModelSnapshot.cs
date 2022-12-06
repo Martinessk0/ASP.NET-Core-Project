@@ -17,7 +17,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -107,7 +107,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             Id = "fe0f0881-a76d-4cd6-9a79-3f6adbd5f82f",
                             AccessFailedCount = 0,
                             Address = "Admin Street 6",
-                            ConcurrencyStamp = "488b2aef-2fb7-4c8a-b491-da0e8135761c",
+                            ConcurrencyStamp = "0d51cc36-d5fe-4d65-9d7c-9b596b65614d",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -115,9 +115,9 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEON9G1UeovKa05OIQA9Ot7xOfduqhAY9f7sW3axYI856gV62lWTFSs0WleqFE/Vs0Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGKSGOn/B7eu1ToxbTEkGVAzKP/N2AFuVnUKSNhk/nHsZ05gz4yYcfx1UGDWOnTk+A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ae558cea-14d6-44d0-a2bf-2b6acadb30ba",
+                            SecurityStamp = "51164585-8d54-4e16-b95c-311257842c5b",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         },
@@ -126,7 +126,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             Id = "06552aa5-bcbe-49ef-ac65-fd84699d0d3e",
                             AccessFailedCount = 0,
                             Address = "Guest Street 3",
-                            ConcurrencyStamp = "9ca15590-5b36-448a-98f9-8a51044e765a",
+                            ConcurrencyStamp = "9c523617-3af1-48f7-bf90-9c6eef348018",
                             Email = "guest@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Guest",
@@ -134,11 +134,30 @@ namespace BurgerManiaApp.Infractructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "GUEST@GMAIL.COM",
                             NormalizedUserName = "GUEST",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPHm4XmCBqKuKgM0dugRcsLnYhA+W9okk/ugeDxscXrR3J0MWCaGM1iIpRPaj/dJ7g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN479ZxRT+uvl1NeskcdIweN7oaJ9YGw1N6eQAtO8zdqJxwm3o/vepP091TELEMK2A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3773421b-851f-4c4c-b575-c5d41b3cd823",
+                            SecurityStamp = "2974970b-5e0d-4919-8122-e33e6dde9747",
                             TwoFactorEnabled = false,
                             UserName = "Guest"
+                        },
+                        new
+                        {
+                            Id = "f9bf120c-fafd-48d1-a4c6-330f99ad8a67",
+                            AccessFailedCount = 0,
+                            Address = "DELIVERER Street 5",
+                            ConcurrencyStamp = "a8de561e-2673-4d4e-b199-ae26feba8feb",
+                            Email = "deliverer@gmail.com",
+                            EmailConfirmed = false,
+                            FirstName = "Deliverer",
+                            LastName = "Delivrov",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "DELIVERER@GMAIL.COM",
+                            NormalizedUserName = "DELIVERER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHjCS+VHPeCFN1qeVWxkufguK6CdTfh9SwZ8hPjJnUUgGnnGWt10vzuzBi7a6dCBCg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "bce530a7-eb30-4640-84c8-af50163d45c4",
+                            TwoFactorEnabled = false,
+                            UserName = "Deliverer"
                         });
                 });
 
@@ -149,6 +168,12 @@ namespace BurgerManiaApp.Infractructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CartItemId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -161,9 +186,11 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CartItemId");
+
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems", (string)null);
+                    b.ToTable("CartItems");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.Category", b =>
@@ -181,7 +208,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -221,7 +248,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("OrderStatusId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.OrderStatus", b =>
@@ -238,7 +265,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses", (string)null);
+                    b.ToTable("OrderStatuses");
 
                     b.HasData(
                         new
@@ -306,18 +333,18 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 11, 30, 22, 50, 47, 16, DateTimeKind.Local).AddTicks(8751),
+                            CreatedAt = new DateTime(2022, 12, 6, 23, 49, 48, 527, DateTimeKind.Local).AddTicks(3256),
                             Description = "Spicy Burger",
                             ImageUrl = "https://wickedkitchen.com/wp-content/uploads/2022/05/Wicked-jalapeno-burger.jpeg",
                             IsActive = true,
-                            ModifiedAt = new DateTime(2022, 11, 30, 22, 50, 47, 16, DateTimeKind.Local).AddTicks(8791),
+                            ModifiedAt = new DateTime(2022, 12, 6, 23, 49, 48, 527, DateTimeKind.Local).AddTicks(3295),
                             Name = "Spicy Burger",
                             Price = 7m
                         },
@@ -325,11 +352,11 @@ namespace BurgerManiaApp.Infractructure.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 11, 30, 22, 50, 47, 16, DateTimeKind.Local).AddTicks(8800),
+                            CreatedAt = new DateTime(2022, 12, 6, 23, 49, 48, 527, DateTimeKind.Local).AddTicks(3303),
                             Description = "Coca-Cola",
                             ImageUrl = "https://cdncloudcart.com/16372/products/images/68308/coca-cola-bezalkoholna-napitka-ken-250-ml-image_629659e5b307d_1920x1920.jpeg?1654020601",
                             IsActive = true,
-                            ModifiedAt = new DateTime(2022, 11, 30, 22, 50, 47, 16, DateTimeKind.Local).AddTicks(8802),
+                            ModifiedAt = new DateTime(2022, 12, 6, 23, 49, 48, 527, DateTimeKind.Local).AddTicks(3305),
                             Name = "Coca-Cola",
                             Price = 1m
                         },
@@ -337,11 +364,11 @@ namespace BurgerManiaApp.Infractructure.Migrations
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 11, 30, 22, 50, 47, 16, DateTimeKind.Local).AddTicks(8805),
+                            CreatedAt = new DateTime(2022, 12, 6, 23, 49, 48, 527, DateTimeKind.Local).AddTicks(3308),
                             Description = "Salad with Iceberg lettuce",
                             ImageUrl = "https://eatsomethingvegan.com/wp-content/uploads/2021/11/Iceberg-Lettuce-Salad-5-681x1024.jpg",
                             IsActive = true,
-                            ModifiedAt = new DateTime(2022, 11, 30, 22, 50, 47, 16, DateTimeKind.Local).AddTicks(8807),
+                            ModifiedAt = new DateTime(2022, 12, 6, 23, 49, 48, 527, DateTimeKind.Local).AddTicks(3310),
                             Name = "Salad with Iceberg lettuce",
                             Price = 7m
                         });
@@ -364,11 +391,9 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CartItemId");
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("ShoppingCarts", (string)null);
+                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.UserOrder", b =>
@@ -383,7 +408,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("UserOrder", (string)null);
+                    b.ToTable("UserOrder");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -525,6 +550,10 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.CartItem", b =>
                 {
+                    b.HasOne("BurgerManiaApp.Infrastructure.Data.Entities.ShoppingCart", null)
+                        .WithMany("CartItem")
+                        .HasForeignKey("CartItemId");
+
                     b.HasOne("BurgerManiaApp.Infrastructure.Data.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
@@ -558,19 +587,11 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.ShoppingCart", b =>
                 {
-                    b.HasOne("BurgerManiaApp.Infrastructure.Data.Entities.CartItem", "CartItem")
-                        .WithMany()
-                        .HasForeignKey("CartItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BurgerManiaApp.Infractructure.Data.Entities.Account.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("CartItem");
 
                     b.Navigation("User");
                 });
@@ -658,6 +679,11 @@ namespace BurgerManiaApp.Infractructure.Migrations
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.OrderStatus", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.ShoppingCart", b =>
+                {
+                    b.Navigation("CartItem");
                 });
 #pragma warning restore 612, 618
         }
