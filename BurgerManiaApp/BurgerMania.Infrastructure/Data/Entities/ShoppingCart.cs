@@ -1,26 +1,51 @@
 ﻿using BurgerManiaApp.Infractructure.Data.Entities.Account;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using BurgerManiaApp.Infrastructure.Data.Entities;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BurgerManiaApp.Infrastructure.Data.Entities
+namespace BurgerManiaApp.Infractructure.Data.Entities
 {
     public class ShoppingCart
     {
+        public ShoppingCart(string buyerId)
+        {
+            BuyerId = buyerId;
+            DateOfCreation = DateTime.Now;
+        }
+        [Key]
         public int Id { get; set; }
 
-        public int CartItemId { get; set; }
+        public string BuyerId { get; set; }
 
-        [ForeignKey(nameof(CartItemId))]
-        public IEnumerable<CartItem> CartItem { get; set; } = new List<CartItem>();
+        [ForeignKey(nameof(BuyerId))]
+        public User Buyer{ get; set; }
 
-        [Required]
-        public string UserId { get; set; } = null!;
-        [ForeignKey(nameof(UserId))]
-        public User User { get; set; } = null!;
+        public List<ShoppingCartItem> CartProducts { get; set; } = new List<ShoppingCartItem>();
+
+        public DateTime DateOfCreation { get; set; }
+
+        public void AddItem(Product product, int quantity = 1)
+        {
+            if (!CartProducts.Any(i => i.ProductName == product.Name)) 
+            {
+                CartProducts.Add(new ShoppingCartItem(product.Id, product.Name, product.Price, product.ImageUrl, quantity));
+                return;
+            }
+
+
+            var duplicateProducts = CartProducts.First(i => i.ProductId == product.Id);
+            duplicateProducts.AddQuantity(quantity);
+        }
+
+        public void RemoveEmptyItems()
+        {
+            CartProducts.RemoveAll(i => i.Quantity == 0);
+        }
+
+        public void SetNewBuyerId(string buyerId)
+        {
+            BuyerId = buyerId;
+        }
     }
 }
+

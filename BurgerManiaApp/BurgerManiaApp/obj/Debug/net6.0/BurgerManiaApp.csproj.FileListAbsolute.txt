@@ -192,7 +192,6 @@ E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaAp
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.AssemblyInfoInputs.cache
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.AssemblyInfo.cs
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.csproj.CoreCompileInputs.cache
-E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.MvcApplicationPartsAssemblyInfo.cs
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.MvcApplicationPartsAssemblyInfo.cache
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.RazorAssemblyInfo.cache
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.RazorAssemblyInfo.cs
@@ -416,3 +415,4 @@ E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaAp
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\scopedcss\Areas\Admin\Views\Shared\_AdminLayout.cshtml.rz.scp.css
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.MvcApplicationPartsAssemblyInfo.cs

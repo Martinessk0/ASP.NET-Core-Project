@@ -1,4 +1,4 @@
-using BurgerManiaApp.Infractructure.Data.Entities.Account;
+    using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using BurgerManiaApp.Infrastructure.Data;
 using BurgerManiaApp.ModelBinder;
 using Microsoft.AspNetCore.Identity;
@@ -34,8 +34,14 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Error/AccessDenied";
     options.LoginPath = "/User/Login";
 });
-
 builder.Services.AddApplicationServices();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 

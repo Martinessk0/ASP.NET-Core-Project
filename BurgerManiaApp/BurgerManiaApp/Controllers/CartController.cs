@@ -1,4 +1,8 @@
-﻿using BurgerManiaApp.Helper;
+﻿using BurgerManiaApp.Core.Contracts;
+using BurgerManiaApp.Core.Models.Cart;
+using BurgerManiaApp.Core.Services;
+using BurgerManiaApp.Extensions;
+using BurgerManiaApp.Helper;
 using BurgerManiaApp.Infractructure.Data.Common;
 using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using Microsoft.AspNetCore.Mvc;
@@ -7,26 +11,51 @@ namespace BurgerManiaApp.Controllers
 {
     public class CartController : Controller
     {
-        private readonly IRepository repo;
+        private readonly ICartService cartService;
 
-        public CartController(IRepository repo)
+        public CartController(
+            ICartService cartService)
         {
-            this.repo = repo;
+            this.cartService = cartService;
         }
 
-        public async IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var userId = User.Identity;
-            var user = await repo.GetByIdAsync<User>(userId);
+            var userId = HttpContext.GetUserId();
+            var cart = await cartService.GetOrCreateCart(userId);
 
+            IndexViewModel model = new IndexViewModel
+            {
+                UserCart = cart
+            };
 
-            return View();
+            return View(model);
         }
 
-        public async Task<IActionResult> AddToCart(int id) 
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(int Id)
         {
-            
-            return View();
+            var userId = HttpContext.GetUserId();
+            await cartService.GetOrCreateCart(userId);
+
+            await cartService.AddToCart(userId, Id);
+
+            return RedirectToAction("All", "Product");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateCart(Dictionary<int, int> productAndQuantity)
+        {
+            if (productAndQuantity.Values.Any(x => x < 0))
+            {
+                TempData["NegativeQuantityError"] = "Quantity cannot be negative";
+
+                return RedirectToAction("Index");
+            }
+
+            await cartService.UpdateQuantity(productAndQuantity);
+
+            return RedirectToAction("Index");
         }
     }
 }

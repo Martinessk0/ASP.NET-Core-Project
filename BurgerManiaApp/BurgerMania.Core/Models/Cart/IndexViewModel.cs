@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BurgerManiaApp.Core.Models.Cart
+{
+    public class IndexViewModel
+    {
+        public ShoppingCartDto UserCart { get; set; }
+        public decimal TotalPrice()
+        {
+            return Math.Round(UserCart.CartItems.Sum(x => x.Price * x.Quantity), 2);
+        }
+    }
+}
