@@ -30,7 +30,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         public List<ShoppingCartItem> Products { get; set; } = new List<ShoppingCartItem>();
 
         [Required]
-        public int OrderStatusId { get; set; }
+        public int OrderStatusId { get; set; } = 1;
         [ForeignKey(nameof(OrderStatusId))]
         public OrderStatus OrderStatus { get; set; }
 

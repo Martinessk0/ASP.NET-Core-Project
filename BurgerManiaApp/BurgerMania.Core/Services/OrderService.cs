@@ -10,10 +10,12 @@ namespace BurgerManiaApp.Core.Services
     public class OrderService : IOrderService
     {
         private readonly IRepository repo;
+        private readonly ApplicationDbContext _context;
 
-        public OrderService(IRepository repo)
+        public OrderService(IRepository repo, ApplicationDbContext context)
         {
             this.repo = repo;
+            _context = context;
         }
         public async Task CreateOrder(string? buyerId,
                                       int? cartId,
@@ -32,7 +34,7 @@ namespace BurgerManiaApp.Core.Services
 
             if (buyerId is not null && cartId is not null)
             {
-                cart = await repo.AllReadonly<ShoppingCart>()
+                cart = await _context.ShoppingCarts
                     .Include(x => x.CartProducts)
                     .Where(x => x.BuyerId == buyerId)
                     .FirstAsync();
@@ -47,7 +49,10 @@ namespace BurgerManiaApp.Core.Services
                     OrderNumber = Guid.NewGuid().ToString(),
                 });
 
-                await repo.DeleteAsync<ShoppingCart>(cart);
+                _context.ShoppingCarts.Remove(cart);
+
+                _context.SaveChanges();
+                //await repo.DeleteAsync<ShoppingCart>(cart);
 
                 await repo.SaveChangesAsync();
             }
