@@ -4,6 +4,7 @@ using BurgerManiaApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BurgerManiaApp.Infractructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221208183539_IsActiveAddedOnShoppingCart")]
+    partial class IsActiveAddedOnShoppingCart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -183,7 +185,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("BuyerId");
 
-                    b.ToTable("ShoppingCarts", (string)null);
+                    b.ToTable("ShoppingCarts");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infractructure.Data.Entities.ShoppingCartItem", b =>
@@ -225,7 +227,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems", (string)null);
+                    b.ToTable("CartItems");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.Category", b =>
@@ -243,7 +245,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -293,7 +295,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeliveryAddresses", (string)null);
+                    b.ToTable("DeliveryAddresses");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.Order", b =>
@@ -339,7 +341,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("OrderStatusId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("BurgerManiaApp.Infrastructure.Data.Entities.OrderStatus", b =>
@@ -356,7 +358,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses", (string)null);
+                    b.ToTable("OrderStatuses");
 
                     b.HasData(
                         new
@@ -424,7 +426,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
 
                     b.HasData(
                         new
@@ -477,7 +479,7 @@ namespace BurgerManiaApp.Infractructure.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("UserOrder", (string)null);
+                    b.ToTable("UserOrder");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

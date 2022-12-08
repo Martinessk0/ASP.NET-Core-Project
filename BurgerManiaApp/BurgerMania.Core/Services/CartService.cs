@@ -30,7 +30,7 @@ namespace BurgerManiaApp.Core.Services
             await repo.SaveChangesAsync();
 
             return await repo.All<ShoppingCart>()
-                .Where(x => x.BuyerId == userId)
+                .Where(x => x.BuyerId == userId && x.IsActive)
                 .Select(x => new ShoppingCartDto()
                 {
                     BuyerId = x.BuyerId,
@@ -52,7 +52,7 @@ namespace BurgerManiaApp.Core.Services
         {
             var cart = await repo.All<ShoppingCart>()
                 .Include(x => x.CartProducts)
-                .Where(x => x.BuyerId == userId)
+                .Where(x => x.BuyerId == userId && x.IsActive)
                 .Select(x => new ShoppingCartDto()
                 {
                     BuyerId = x.BuyerId,
@@ -81,7 +81,7 @@ namespace BurgerManiaApp.Core.Services
         public async Task AddToCart(string? userId, int productId)
         {
             var cart = await repo.All<ShoppingCart>()
-                .Where(x => x.BuyerId == userId)
+                .Where(x => x.BuyerId == userId && x.IsActive)
                 .FirstOrDefaultAsync();
 
             if (cart == null)

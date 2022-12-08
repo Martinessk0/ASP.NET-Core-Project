@@ -23,6 +23,7 @@ namespace BurgerManiaApp.Infractructure.Data.Entities
         public List<ShoppingCartItem> CartProducts { get; set; } = new List<ShoppingCartItem>();
 
         public DateTime DateOfCreation { get; set; }
+        public bool IsActive { get; set; } = true;
 
         public void AddItem(Product product, int quantity = 1)
         {
