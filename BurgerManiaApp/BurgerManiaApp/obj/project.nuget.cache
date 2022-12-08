@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "liOXTv/OsMKPJ/7sN8F8xiFclGbhHioWU5fSHJ/dUqfiVJhXpw1my4nULV6o7VyJS4PRSAY6CxI412g3qfDqQg==",
+  "dgSpecHash": "nIVrZU4xNgqUwFlNHu3r2uA2+NLDT1GrKf5PM6MJl2ziTTqfJAIUvhQd3XnJkmnHbs4ais/w6wZnbOxvTAqlXQ==",
   "success": true,
   "projectFilePath": "E:\\GitHub\\ASP.NET Core Project\\ASP.NET-Core-Project\\BurgerManiaApp\\BurgerManiaApp\\BurgerManiaApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\marto\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\marto\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\marto\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\marto\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
