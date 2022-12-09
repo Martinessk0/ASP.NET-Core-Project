@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Add Role";
+}
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <h2 class="text-center">@ViewBag.Title</h2>
+        <hr />
+
+        <partial name="_RoleFormPartial" model="@Model" />
+    </main>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,11 @@
+﻿@model UserServiceModel
+
+
+<div class="card w-100 mb-1">
+    <div class="card-body">
+        <h5 class="card-title">User-Email: @Model.Email</h5>
+        <p class="card-text">User-Full Name: @Model.FullName</p>
+        <p class="card-text">User-Phone Number: @(Model.PhoneNumber)</p>
+        <a asp-area="Admin" asp-controller="Role" asp-action="AddRole" asp-route-id="@Model.Email" class="btn btn-success">Add Role</a>
+    </div>
+</div>

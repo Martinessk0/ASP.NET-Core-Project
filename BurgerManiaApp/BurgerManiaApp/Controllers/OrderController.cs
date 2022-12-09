@@ -1,7 +1,6 @@
 ﻿using BurgerManiaApp.Core.Contracts;
 using BurgerManiaApp.Core.Models.Order;
 using BurgerManiaApp.Extensions;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 
 

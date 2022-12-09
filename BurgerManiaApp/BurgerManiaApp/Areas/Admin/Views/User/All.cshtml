@@ -1,44 +1,24 @@
-﻿@model IEnumerable<UserServiceModel>
+﻿@model UsersViewModel
 
 @{
     ViewBag.Title = "All Users";
 }
-<p></p>
+
 <div class="container">
     <main role="main" class="pb-3">
-
-        <h2 class="text-center">@ViewBag.Title</h2>
+        <h3>Users</h3>
         <hr />
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th><label>Full Name</label></th>
-                    <th><label>Email</label></th>
-                    <th><label>Phone Number</label></th>
-                    <th><label>User Is Admin</label></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var user in Model)
-                {
-                    <tr>
-                        <td><label>@user.FullName</label></td>
-                        <td><label>@user.Email</label></td>
-                        <td><label>@user.PhoneNumber</label></td>
-                        <td>
-                            @if (user.PhoneNumber != null)
-                            {
-                                <label>✔</label>
-                            }
-                            else
-                            {
-                                <label class="text-center">❌</label>
-                            }
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        @if (Model.Users.Count > 0)
+        {
+            @foreach (var item in Model.Users)
+            {
+                <partial name="_UserPartial" model="@item" />
+            }
+        }
+        else
+        {
+            <p>There are no users in the profil yet!</p>
+        }
+        <hr />
     </main>
 </div>

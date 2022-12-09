@@ -4,7 +4,7 @@ namespace BurgerManiaApp.Core.Contracts.Admin
 {
     public interface IUserService
     {
-        Task<IEnumerable<UserServiceModel>> All();
+        Task<UsersViewModel> All();
 
     }
 }

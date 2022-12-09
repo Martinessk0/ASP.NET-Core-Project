@@ -13,8 +13,5 @@ namespace BurgerManiaApp.Core.Models.Admin
         public string FullName { get; init; } = null!;
 
         public string PhoneNumber { get; init; } = null!;
-
-        public bool IsAdmin { get; set; } = false;
-
     }
 }
