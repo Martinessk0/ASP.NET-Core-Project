@@ -19,7 +19,7 @@ namespace BurgerManiaApp.Core.Services
             this.repo = repo;
             logger = _logger;
         }
-        public async Task<ProductQueryModel> All(string? category = null, string? searchTerm = null, ProductSorting sorting = ProductSorting.Newest, int currentPage = 1, int housesPerPage = 1)
+        public async Task<ProductQueryModel> All(string? category = null, string? searchTerm = null, ProductSorting sorting = ProductSorting.Newest, int currentPage = 1, int productsPerPage = 1)
         {
             var result = new ProductQueryModel();
             var products = repo.AllReadonly<Product>()
@@ -52,8 +52,8 @@ namespace BurgerManiaApp.Core.Services
             };
 
             result.Products = await products
-                .Skip((currentPage - 1) * housesPerPage)
-                .Take(housesPerPage)
+                .Skip((currentPage - 1) * productsPerPage)
+                .Take(productsPerPage)
                 .Select(h => new ProductServiceModel()
                 {
                     Id = h.Id,
@@ -166,13 +166,13 @@ namespace BurgerManiaApp.Core.Services
 
         public async Task Edit(int productId, ProductModel model)
         {
-            var house = await repo.GetByIdAsync<Product>(productId);
+            var product = await repo.GetByIdAsync<Product>(productId);
 
-            house.Description = model.Description;
-            house.ImageUrl = model.ImageUrl;
-            house.Price = model.Price;
-            house.Name = model.Name;
-            house.CategoryId = model.CategoryId;
+            product.Description = model.Description;
+            product.ImageUrl = model.ImageUrl;
+            product.Price = model.Price;
+            product.Name = model.Name;
+            product.CategoryId = model.CategoryId;
 
             await repo.SaveChangesAsync();
         }

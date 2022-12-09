@@ -1,0 +1,75 @@
+﻿@model CurrentOrderViewModel
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div class="container">
+    <main role="main" class="pt-5 pb-5">
+        <h3>Order #@Model.OrderNumber</h3>
+        <p></p>
+        <h4>@Model.OrderDate.Substring(0,19) - <b>@Model.OrderStatus</b></h4>
+        <hr />
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Address for delivery:</h3>
+                    <p>Full Name: @Model.FullName</p>
+                    <p>Phone Number: @Model.PhoneNumber</p>
+                    <p>Address: @Model.DeliveryAddress</p>
+                    <p>City: @Model.City</p>
+                </div>
+                <div class="col">
+                    <h3>Personal Information:</h3>
+                    <p>Full Name: @Model.FullName</p>
+                    <p>Phone Number: @Model.PhoneNumber</p>
+                    <p>Email: @Model.Email</p>
+                    <p>City: @Model.City</p>
+                </div>
+            </div>
+       
+        <hr />
+        <h3>Products</h3>
+            <div class="productList">
+            @for (int i = 0; i < Model.Products.Count(); i++)
+                {
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div>
+                                    <img src="@Model.Products[i].ImageUrl"
+                                     class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                    </div>
+                                    <div class="ms-3">
+                                    <h5>@Model.Products[i].ProductName</h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row align-items-center">
+                                    <div style="width: 70px;">
+                                    <h5>@Model.Products[i].Quantity</h5>
+                                    </div>
+                                    <div style="width: 100px;">
+                                    <h5 class="mb-0">@Model.Products[i].Price BGN / per item</h5>
+                                    </div>
+                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <h3>Total: @(Model.TotalPrice) BGN</h3>
+                </div>
+            </div>
+        </div>
+           
+    </main>
+</div>

@@ -10,13 +10,10 @@ namespace BurgerManiaApp.Core.Services.Admin
     public class UserService : IUserService
     {
         private readonly IRepository repo;
-        private readonly UserManager<User> userManager;
 
-        public UserService(IRepository repo,
-            UserManager<User> userManager)
+        public UserService(IRepository repo)
         {
             this.repo = repo;
-            this.userManager = userManager;
         }
 
         public async Task<IEnumerable<UserServiceModel>> All()
@@ -26,16 +23,9 @@ namespace BurgerManiaApp.Core.Services.Admin
                 {
                     Email = u.Email,
                     FullName = $"{u.FirstName} {u.LastName}",
-                    PhoneNumber = u.PhoneNumber
+                    PhoneNumber = u.PhoneNumber,
                 })
                 .ToListAsync();
-
-        }
-
-        public async Task<string> UserFullName(string userId)
-        {
-            var user = await repo.GetByIdAsync<User>(userId);
-            return $"{user.FirstName} {user.LastName}".Trim();
         }
     }
 }

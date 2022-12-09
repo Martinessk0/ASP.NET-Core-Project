@@ -30,6 +30,6 @@ namespace BurgerManiaApp.Core.Contracts
            string? searchTerm = null,
            ProductSorting sorting = ProductSorting.Newest,
            int currentPage = 1,
-           int housesPerPage = 1);
+           int productsPerPage = 1);
     }
 }

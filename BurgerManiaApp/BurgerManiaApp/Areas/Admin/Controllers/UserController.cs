@@ -1,4 +1,5 @@
 ﻿using BurgerManiaApp.Core.Contracts.Admin;
+using BurgerManiaApp.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BurgerManiaApp.Areas.Admin.Controllers
@@ -15,6 +16,11 @@ namespace BurgerManiaApp.Areas.Admin.Controllers
         public async Task<IActionResult> All()
         {
             var model = await userService.All();
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             return View(model);
         }

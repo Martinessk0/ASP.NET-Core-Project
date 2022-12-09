@@ -95,9 +95,9 @@
         }
 
         <div class="row">
-            @foreach (var house in Model.Products)
+            @foreach (var product in Model.Products)
             {
-                <partial name="_ProductPartial" model="@house" />
+                <partial name="_ProductPartial" model="@product" />
             }
         </div>
 

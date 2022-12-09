@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BurgerManiaApp.Core.Models.Order;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,9 @@ namespace BurgerManiaApp.Core.Contracts
                                       string streetAddress,
                                       string city,
                                       string? deliveryAddressName);
+
+        Task<OrdersViewModel> GetAllOrders(string? userId);
+
+        Task<CurrentOrderViewModel> GetCurrentOrderInfo(int id, string userId);
     }
 }

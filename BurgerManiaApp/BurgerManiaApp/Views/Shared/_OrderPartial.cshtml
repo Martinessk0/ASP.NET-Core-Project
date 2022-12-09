@@ -1,0 +1,10 @@
+﻿@model OrderServiceModel
+
+<div class="card w-100 mb-1">
+    <div class="card-body">
+        <h5 class="card-title">Order Number: @Model.OrderId</h5>
+        <p class="card-text">Order Date: @Model.OrderDate.Substring(0,19)</p>
+        <p class="card-text">Order Status: @(Model.OrderStatusName)</p>
+        <a asp-controller="Order" asp-action="MoreAbout" asp-route-id="@Model.OrderId" class="btn btn-primary">More</a>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 ﻿using BurgerManiaApp.Core.Models.Cart;
+using System.ComponentModel.DataAnnotations;
 
 namespace BurgerManiaApp.Core.Models.Order
 {
@@ -11,7 +12,9 @@ namespace BurgerManiaApp.Core.Models.Order
         public string? City { get; set; }
         public string? EmailAddress { get; set; }
         public string? PhoneNumber { get; set; }
+        [Required]
         public string? FirstName { get; set; }
+        [Required]
         public string? LastName { get; set; }
 
 

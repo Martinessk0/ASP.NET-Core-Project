@@ -26,6 +26,22 @@ namespace BurgerManiaApp.Controllers
             this.config = config;
         }
 
+        public async Task<IActionResult> All(OrdersViewModel model)
+        {
+            var userId = HttpContext.GetUserId();
+            model = await orderService.GetAllOrders(userId);
+            return View(model);
+        }
+        
+        public async Task<IActionResult> MoreAbout(int id)
+        {
+            var userId = HttpContext.GetUserId();
+
+            var order = await orderService.GetCurrentOrderInfo(id, userId);
+
+            return View(order);
+        }
+
         public async Task<IActionResult> CreateOrder()
         {
             var userId = HttpContext.GetUserId();
@@ -42,12 +58,16 @@ namespace BurgerManiaApp.Controllers
             return View(vm);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Checkout(CheckoutViewModel model)
         {
             var userId = HttpContext.GetUserId();
             var cart = await cartService.GetOrCreateCart(userId);
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
             if (ModelState.IsValid)
             {

@@ -91,16 +91,16 @@ namespace BurgerManiaApp.Controllers
                 return RedirectToAction("AccessDenied", "Error");
             }
 
-            var house = await productService.ProductDetailsById(id);
+            var product = await productService.ProductDetailsById(id);
             var categoryId = await productService.GetProductCategoryId(id);
 
             var model = new ProductModel()
             {
                 CategoryId = categoryId,
-                Description = house.Description,
-                ImageUrl = house.ImageUrl,
-                Price = house.Price,
-                Name = house.Name,
+                Description = product.Description,
+                ImageUrl = product.ImageUrl,
+                Price = product.Price,
+                Name = product.Name,
                 ProductCategories = await productService.AllCategories(),
             };
 

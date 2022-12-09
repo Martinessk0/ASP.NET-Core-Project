@@ -34,3 +34,8 @@ body {
 .inputSize{
     width: 50px;
 }
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+}

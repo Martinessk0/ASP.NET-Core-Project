@@ -2,7 +2,6 @@
 using BurgerManiaApp.Core.Models.Cart;
 using BurgerManiaApp.Core.Services;
 using BurgerManiaApp.Extensions;
-using BurgerManiaApp.Helper;
 using BurgerManiaApp.Infractructure.Data.Common;
 using BurgerManiaApp.Infractructure.Data.Entities.Account;
 using Microsoft.AspNetCore.Mvc;
