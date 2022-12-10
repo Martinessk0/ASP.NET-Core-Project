@@ -44,17 +44,17 @@ namespace BurgerManiaApp.Controllers
         public async Task<IActionResult> CreateOrder()
         {
             var userId = HttpContext.GetUserId();
-            CheckoutViewModel vm = new CheckoutViewModel
+            CheckoutViewModel model = new CheckoutViewModel
             {
                 UserCart = await cartService.GetOrCreateCart(userId)
             };
 
-            if (vm.UserCart.CartItems.Count() < 1)
+            if (model.UserCart.CartItems.Count() < 1)
             {
                 return RedirectToAction("Index", "Cart");
             }
 
-            return View(vm);
+            return View(model);
         }
 
         [HttpPost]

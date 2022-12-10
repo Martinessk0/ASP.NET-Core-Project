@@ -12,10 +12,13 @@ namespace BurgerManiaApp.Core.Services.Admin
     public class UserService : IUserService
     {
         private readonly IRepository repo;
+        private readonly IRoleService roleService;
 
-        public UserService(IRepository repo)
+        public UserService(IRepository repo,
+            IRoleService roleService)
         {
             this.repo = repo;
+            this.roleService = roleService;
         }
 
         //public async Task<IEnumerable<UserServiceModel>> All()
@@ -37,9 +40,11 @@ namespace BurgerManiaApp.Core.Services.Admin
             var users = await repo.AllReadonly<User>()
                 .Select(o => new UserServiceModel()
                 {
+                    Id = o.Id,
                     Email = o.Email,
                     FullName = $"{o.FirstName} {o.LastName}",
                     PhoneNumber = o.PhoneNumber,
+                    Roles = roleService.GetRolesForThisUser(o.Id).Result.ToList(),
                 })
                 .OrderBy(x => x.Email)
                 .ToListAsync();

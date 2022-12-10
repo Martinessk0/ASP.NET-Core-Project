@@ -3,9 +3,22 @@
 
 <div class="card w-100 mb-1">
     <div class="card-body">
-        <h5 class="card-title">User-Email: @Model.Email</h5>
-        <p class="card-text">User-Full Name: @Model.FullName</p>
-        <p class="card-text">User-Phone Number: @(Model.PhoneNumber)</p>
-        <a asp-area="Admin" asp-controller="Role" asp-action="AddRole" asp-route-id="@Model.Email" class="btn btn-success">Add Role</a>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h5 class="card-title">User-Email: @Model.Email</h5>
+                    <p class="mb-0">User-Full Name: @(Model.FullName == null ? "None" : Model.FullName)</p>
+                    <p>User-Phone Number: @(Model.PhoneNumber == null ? "None" : Model.PhoneNumber)</p>
+                </div>
+                <div class="col">
+                    <h5 class="card-title">Roles:</h5>
+                    @foreach (var item in Model.Roles)
+                    {
+                        <p class="mb-0">@(item)</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <a asp-area="Admin" asp-controller="Role" asp-action="AddRole" asp-route-id="@Model.Id" class="btn btn-success">Add Role</a>
     </div>
 </div>

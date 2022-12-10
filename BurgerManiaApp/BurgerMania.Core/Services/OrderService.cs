@@ -84,11 +84,12 @@ namespace BurgerManiaApp.Core.Services
         public async Task<CurrentOrderViewModel> GetCurrentOrderInfo(int id,string userId)
         {
 
-            //var orders = await _context.Orders
-            //    .Include(x => x.Products)
-            //    .ToListAsync();
+            var orders = await _context.Orders
+                .Include(x => x.Products)
+                .ToListAsync();
 
             var productsOrder = await repo.GetByIdAsync<Order>(id);
+
 
             var order = await repo.AllReadonly<Order>()
                 .Where(x => x.Id == id)

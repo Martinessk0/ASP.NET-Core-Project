@@ -9,8 +9,14 @@ namespace BurgerManiaApp.Core.Models.Admin
 {
     public class RoleModel
     {
-        public string Email { get; set; }
-        public string Name { get; set; }
-        public List<string> Roles { get; set; }
+        public string Id { get; set; } = null!;
+
+        public string Email { get; set; } = null!;
+
+        public string Name { get; set; } = null!;
+
+        public List<string> Roles { get; set; } = new List<string>();
+
+        public string Role { get; set; }
     }
 }
