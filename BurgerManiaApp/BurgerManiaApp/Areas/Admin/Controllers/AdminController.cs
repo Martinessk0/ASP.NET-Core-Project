@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using static BurgerManiaApp.Areas.Admin.Constants.AdminConstants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using static BurgerManiaApp.Areas.Admin.Constants.AdminConstants;
 
 namespace BurgerManiaApp.Areas.Admin.Controllers
 {

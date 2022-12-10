@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <main role="main" class="pb-3">
+        <div class="mt-4 p-5 text-center" style="background-color: #eee;">
+            <h2 class="display-4">Hello, Deliverer!</h2>          
+            <p class="lead mt-1">
+                You can change every <b>order</b> status
+            </p>
+            <hr class="my-4">          
+            <span>  |   </span>
+            <a asp-area="Deliverer" asp-controller="Order" asp-action="All"
+               class="btn btn-primary btn-lg">Orders</a>
+            <span>  |   </span>            
+        </div>
+    </main>
+</div>

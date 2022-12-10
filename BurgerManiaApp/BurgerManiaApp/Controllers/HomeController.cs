@@ -1,8 +1,9 @@
-﻿using BurgerManiaApp.Core.Contracts;
+﻿using static BurgerManiaApp.Areas.Admin.Constants.AdminConstants;
+using static BurgerManiaApp.Areas.Deliverer.Constants.DelivererConstants;
+using BurgerManiaApp.Core.Contracts;
 using BurgerManiaApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using static BurgerManiaApp.Areas.Admin.Constants.AdminConstants;
 
 namespace BurgerManiaApp.Controllers
 {
@@ -22,6 +23,10 @@ namespace BurgerManiaApp.Controllers
             if (this.User.IsInRole(AdminRoleName))
             {
                 return RedirectToAction("Index", "Home", new { area = "Admin" });
+            }
+            if (this.User.IsInRole(DelivererRoleName))
+            {
+                return RedirectToAction("Index", "Home", new { area = "Deliverer" });
             }
 
             var model = await productService.LastThreeBurgers();

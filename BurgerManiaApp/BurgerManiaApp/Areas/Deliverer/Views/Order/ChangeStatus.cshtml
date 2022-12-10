@@ -1,0 +1,40 @@
+﻿@model ChangeStatusModel
+
+@{
+    ViewBag.Title = "Change Order Status";
+}
+
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <h2 class="text-center">@ViewBag.Title</h2>
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+
+                <form asp-controller="Order" asp-action="ChangeStatusToOrder" method="post">
+                    <input type="hidden" asp-for="@Model.Id" />
+                    <div class="form-group">
+                        <label asp-for="Statuses"></label>
+                        <select asp-for="@Model.Status" class="form-control form-control-lg">
+                            @foreach (var status in Model.Statuses)
+                            {
+                                <option value="@status">@status</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Statuses" class="small text-danger"></span>
+                    </div>
+                    <div class="text-center">
+                        <input class="btn btn-primary mt-3" type="submit" value="Add" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

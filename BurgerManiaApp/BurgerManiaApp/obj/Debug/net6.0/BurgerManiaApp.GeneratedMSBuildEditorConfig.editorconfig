@@ -39,6 +39,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/Order/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXE9yZGVyXEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/Order/ChangeStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXE9yZGVyXENoYW5nZVN0YXR1cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/Shared/_OrderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXFNoYXJlZFxfT3JkZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -130,6 +154,10 @@ build_metadata.AdditionalFiles.CssScope =
 [E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-ae6nnukrax
+
+[E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Areas/Deliverer/Views/Shared/_DelivererLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGVsaXZlcmVyXFZpZXdzXFNoYXJlZFxfRGVsaXZlcmVyTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-gx6fsi8eju
 
 [E:/GitHub/ASP.NET Core Project/ASP.NET-Core-Project/BurgerManiaApp/BurgerManiaApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
