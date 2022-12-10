@@ -43,6 +43,7 @@ namespace BurgerManiaApp.Core.Services.Deliverer
             {
                 order.OrderStatusId = orderStatusId;
             }
+            repo.Update(order);
 
             await repo.SaveChangesAsync();
         }
