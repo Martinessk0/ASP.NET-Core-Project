@@ -15,6 +15,11 @@ namespace BurgerManiaApp.Areas.Deliverer.Controllers
 
         public async Task<IActionResult> All(AllOrdersViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                model = await orderService.GetAllOrders();
+                return View(model);
+            }
             model = await orderService.GetAllOrders();
 
             return View(model);

@@ -9,29 +9,28 @@ namespace BurgerManiaApp.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly ILogger<OrderController> logger;
         private readonly IOrderService orderService;
         private readonly ICartService cartService;
-        private IConfiguration config;
 
-        public OrderController(IOrderService orderService, 
-            ICartService cartService,
-            ILogger<OrderController> logger, 
-            IConfiguration config)
+        public OrderController(IOrderService orderService,
+            ICartService cartService)
         {
             this.orderService = orderService;
             this.cartService = cartService;
-            this.logger = logger;
-            this.config = config;
         }
 
         public async Task<IActionResult> All(OrdersViewModel model)
         {
             var userId = HttpContext.GetUserId();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
             model = await orderService.GetAllOrders(userId);
+
             return View(model);
         }
-        
+
         public async Task<IActionResult> MoreAbout(int id)
         {
             var userId = HttpContext.GetUserId();
@@ -87,6 +86,6 @@ namespace BurgerManiaApp.Controllers
             model.UserCart = await cartService.GetOrCreateCart(userId);
 
             return View("CreateOrder", model);
-        }       
+        }
     }
 }

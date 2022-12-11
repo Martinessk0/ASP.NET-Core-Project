@@ -47,8 +47,6 @@ namespace BurgerManiaApp.Controllers
         {
             if (productAndQuantity.Values.Any(x => x < 0))
             {
-                TempData["NegativeQuantityError"] = "Quantity cannot be negative";
-
                 return RedirectToAction("Index");
             }
 
