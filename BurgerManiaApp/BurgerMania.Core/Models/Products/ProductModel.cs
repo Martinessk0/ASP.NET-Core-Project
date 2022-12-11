@@ -1,11 +1,6 @@
-﻿using BurgerManiaApp.Core.Contracts;
-using System;
-using System.Collections.Generic;
+﻿using static BurgerManiaApp.Core.Constants.ProductConstants;
+using BurgerManiaApp.Core.Contracts;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace BurgerManiaApp.Core.Models.Products
 {
@@ -14,20 +9,21 @@ namespace BurgerManiaApp.Core.Models.Products
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 10)]
+        [StringLength(NameMaxLength, MinimumLength = NameMinLength)]
         public string Name { get; set; } = null!;
 
         [Required]
-        [StringLength(500, MinimumLength = 20)]
+        [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
         public string Description { get; set; } = null!;
 
         [Required]
         [Display(Name = "Image URL")]
+        [StringLength(ImageURLMaxLength)]
         public string ImageUrl { get; set; } = null!;
 
         [Required]
         [Display(Name = "Price")]
-        [Range(0.00, 2000.00, ErrorMessage = "Price per item must be a positive number and less than {2} leva")]
+        [Range(PriceMinRange, PriceMaxRange, ErrorMessage = "Price per item must be a positive number and less than {2} leva")]
         public decimal Price { get; set; }
 
         [Display(Name = "Category")]

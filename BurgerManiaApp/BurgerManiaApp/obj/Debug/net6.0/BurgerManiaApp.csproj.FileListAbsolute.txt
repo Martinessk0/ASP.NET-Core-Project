@@ -417,3 +417,8 @@ E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaAp
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\BurgerManiaApp.MvcApplicationPartsAssemblyInfo.cs
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\scopedcss\Areas\Deliverer\Views\Shared\_DelivererLayout.cshtml.rz.scp.css
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\staticwebassets\msbuild.BurgerManiaApp.Microsoft.AspNetCore.StaticWebAssets.props
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\staticwebassets\msbuild.build.BurgerManiaApp.props
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BurgerManiaApp.props
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BurgerManiaApp.props
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Debug\net6.0\staticwebassets.pack.json

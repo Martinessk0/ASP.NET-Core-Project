@@ -1,30 +1,31 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using static BurgerManiaApp.Infrastructure.Data.Constants.UserConstants;
+using System.ComponentModel.DataAnnotations;
 
 namespace BurgerManiaApp.Models.AccountViewModel
 {
     public class RegisterViewModel
     {
         [Required]
-        [StringLength(25, MinimumLength = 2)]
+        [StringLength(FirstNameMaxLength, MinimumLength = FirstNameMinLength)]
         public string FirstName { get; set; }
         [Required]
-        [StringLength(25, MinimumLength = 2)]
+        [StringLength(LastNameMaxLength, MinimumLength = LastNameMinLength)]
         public string LastName { get; set; }
         [Required]
-        [StringLength(20, MinimumLength = 5)]
+        [StringLength(UserNameMaxLength, MinimumLength = UserNameMinLength)]
         public string UserName { get; set; } = null!;
 
         [Required]
         [EmailAddress]
-        [StringLength(60, MinimumLength = 10)]
+        [StringLength(EmailMaxLength, MinimumLength = EmailMinLength)]
         public string Email { get; set; } = null!;
 
         [Required]
-        [StringLength(60, MinimumLength = 10)]
+        [StringLength(AddressMaxLength, MinimumLength = AddressMinLength)]
         public string Address { get; set; } = null!;
 
         [Required]
-        [StringLength(20, MinimumLength = 5)]
+        [StringLength(PasswordMaxLength, MinimumLength = PasswordMinLength)]
         [DataType(DataType.Password)]
         public string Password { get; set; } = null!;
 

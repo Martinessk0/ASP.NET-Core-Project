@@ -1,11 +1,4 @@
-﻿using BurgerManiaApp.Infrastructure.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BurgerManiaApp.Core.Models.Cart
+﻿namespace BurgerManiaApp.Core.Models.Cart
 {
     public class ShoppingCartDto
     {

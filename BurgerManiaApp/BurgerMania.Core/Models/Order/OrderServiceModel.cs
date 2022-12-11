@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using static BurgerManiaApp.Core.Constants.OrderConstants;
 
 namespace BurgerManiaApp.Core.Models.Order
 {
@@ -10,8 +7,9 @@ namespace BurgerManiaApp.Core.Models.Order
     {
         public int OrderId { get; set; }
 
-        public string OrderStatusName { get; set; }
+        [StringLength(OrderStatusNameMaxLength, MinimumLength = OrderStatusNameMinLength)]
+        public string OrderStatusName { get; set; } = null!;
 
-        public string OrderDate { get; set; } 
+        public string OrderDate { get; set; } = null!;
     }
 }
