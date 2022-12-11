@@ -1,12 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using static BurgerManiaApp.Infrastructure.Data.Constants.ProductConstants;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BurgerManiaApp.Infrastructure.Data.Entities
 {
@@ -16,20 +12,20 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(NameMaxLength)]
         public string Name { get; set; } = null!;
 
         [Required]
-        [StringLength(500)]
+        [StringLength(DescriptionMaxLength)]
         public string Description { get; set; } = null!;
 
         [Required]
-        [StringLength(200)]
+        [StringLength(ImageURLMaxLength)]
         public string ImageUrl { get; set; } = null!;
 
         [Required]
         [Column(TypeName = "money")]
-        [Precision(18, 2)]
+        [Precision(PricePrecesion1, PricePrecesion2)]
         public decimal Price { get; set; }
 
         [Required]

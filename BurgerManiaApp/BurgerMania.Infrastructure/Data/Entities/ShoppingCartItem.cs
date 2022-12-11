@@ -1,6 +1,8 @@
-﻿using BurgerManiaApp.Infrastructure.Data.Entities;
+﻿using static BurgerManiaApp.Infrastructure.Data.Constants.ShoppingCartItemConstants;
+using BurgerManiaApp.Infrastructure.Data.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace BurgerManiaApp.Infractructure.Data.Entities
 {
@@ -19,8 +21,13 @@ namespace BurgerManiaApp.Infractructure.Data.Entities
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [Column(TypeName = "money")]
+        [Precision(PricePrecesion1, PricePrecesion2)]
         public decimal Price { get; set; }
 
+        [Required]
+        [StringLength(ImageURLMaxLength)]
         public string ImageUrl { get; set; }
 
         public int Quantity { get; set; }
@@ -30,6 +37,7 @@ namespace BurgerManiaApp.Infractructure.Data.Entities
         [ForeignKey(nameof(CartId))]
         public ShoppingCart ShoppingCart { get; set; }
 
+        [StringLength(NameMaxLength)]
         public string ProductName { get; set; }
 
         public int ProductId { get; set; }

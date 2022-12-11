@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static BurgerManiaApp.Infrastructure.Data.Constants.CategoryConstants;
 
 namespace BurgerManiaApp.Infrastructure.Data.Entities
 {
@@ -13,7 +14,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(NameMaxLength)]
         public string Name { get; set; } = null!;
 
         public List<Product> Products { get; set; }

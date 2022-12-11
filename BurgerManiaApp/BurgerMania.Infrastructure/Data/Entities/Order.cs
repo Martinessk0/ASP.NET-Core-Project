@@ -1,12 +1,7 @@
-﻿using BurgerManiaApp.Infractructure.Data.Entities;
-using BurgerManiaApp.Infractructure.Data.Entities.Account;
-using System;
-using System.Collections.Generic;
+﻿using static BurgerManiaApp.Infrastructure.Data.Constants.OrderConstants;
+using BurgerManiaApp.Infractructure.Data.Entities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BurgerManiaApp.Infrastructure.Data.Entities
 {
@@ -18,19 +13,31 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         }
         [Key]
         public int Id { get; set; }
+
         public string OrderNumber { get; set; }
+
         public string BuyerId { get; set; }
+
         [EmailAddress]
         public string Email { get; set; }
+
+        [StringLength(FullNameMaxLength)]
         public string FullName { get; set; }
+
+        [StringLength(PhoneNumberMaxLength)]
         public string PhoneNumber { get; set; }
+
         public DateTimeOffset OrderDate { get; private set; } = DateTimeOffset.Now;
+
         public DeliveryAddress DeliveryAddress { get; set; }
+
         public int DeliveryAddressId { get; set; }
+
         public List<ShoppingCartItem> Products { get; set; } = new List<ShoppingCartItem>();
 
         [Required]
         public int OrderStatusId { get; set; } = 1;
+
         [ForeignKey(nameof(OrderStatusId))]
         public OrderStatus OrderStatus { get; set; }
 

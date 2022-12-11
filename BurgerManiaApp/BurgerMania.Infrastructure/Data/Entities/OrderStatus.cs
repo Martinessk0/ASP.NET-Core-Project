@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using static BurgerManiaApp.Infrastructure.Data.Constants.OrderStatusConstants;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BurgerManiaApp.Infrastructure.Data.Entities
 {
@@ -13,6 +9,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         public int Id { get; set; }
 
         [Required]
+        [StringLength(NameMaxLength)]
         public string Name { get; set; } = null!;
 
         public List<Order> Orders { get; set; } = new List<Order>();
