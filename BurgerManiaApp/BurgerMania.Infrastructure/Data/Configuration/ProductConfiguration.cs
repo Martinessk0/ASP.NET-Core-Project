@@ -13,7 +13,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.HasData(SeedProducts());
+            //builder.HasData(SeedProducts());
         }
 
         private List<Product> SeedProducts()

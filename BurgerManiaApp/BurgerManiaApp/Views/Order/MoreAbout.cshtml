@@ -49,7 +49,7 @@
                                     <h5>@Model.Products[i].Quantity</h5>
                                     </div>
                                     <div style="width: 100px;">
-                                    <h5 class="mb-0">@Model.Products[i].Price BGN / per item</h5>
+                                        <h5 class="mb-0">@String.Format("{0:f2}", Model.Products[i].Price) BGN/ per item</h5>
                                     </div>
                                     <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                                 </div>
@@ -66,7 +66,7 @@
                 <div class="col-sm"></div>
                 <div class="col-sm"></div>
                 <div class="col-sm">
-                    <h3>Total: @(Model.TotalPrice) BGN</h3>
+                    <h3>Total: @(String.Format("{0:f2}",Model.TotalPrice)) BGN</h3>
                 </div>
             </div>
         </div>

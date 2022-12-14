@@ -40,16 +40,21 @@ namespace BurgerManiaApp.Core.Services
                         EF.Functions.Like(h.Description.ToLower(), searchTerm));
             }
 
-            products = sorting switch
+            switch (sorting)
             {
-                ProductSorting.Newest => products
-                    .OrderBy(p => p.CreatedAt),
-                ProductSorting.Price => products
-                    .OrderByDescending(p => p.Price),
-                ProductSorting.Ascending => products
-                    .OrderBy(p => p.Name),
-                _ => products.OrderByDescending(p => p.Name)
-            };
+                case ProductSorting.Newest:
+                    products = products.OrderBy(p => p.Id);
+                    break;
+                case ProductSorting.Price:
+                    products = products.OrderBy(p => p.Price);
+                    break;
+                case ProductSorting.Ascending:
+                    products = products.OrderBy(p => p.Name);
+                    break;
+                default:
+                    products = products.OrderByDescending(p => p.Name);
+                    break;
+            }
 
             result.Products = await products
                 .Skip((currentPage - 1) * productsPerPage)

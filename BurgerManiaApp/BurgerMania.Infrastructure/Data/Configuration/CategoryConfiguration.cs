@@ -8,7 +8,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasData(SeedCategories());
+           // builder.HasData(SeedCategories());
         }
         private List<Category> SeedCategories()
         {

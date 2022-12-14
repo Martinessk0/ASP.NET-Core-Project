@@ -36,7 +36,7 @@
                                                     <input class="inputSize" type="number" name="@("productAndQuantity[" + i +"].Value")" value="@Model.UserCart.CartItems[i].Quantity" />
                                                 </div>
                                                 <div style="width: 100px;">
-                                                    <h5 class="mb-0">@Model.UserCart.CartItems[i].Price BGN / per item</h5>
+                                                    <h5 class="mb-0">@String.Format("{0:f2}", Model.UserCart.CartItems[i].Price) BGN/ per item</h5>
                                                 </div>
                                                 <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                                             </div>

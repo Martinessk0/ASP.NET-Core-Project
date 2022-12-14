@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #eee;
+}
+
+.imgSize {
+    width: 400px;
+    height: 450px;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.cartImgSize {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+.inputSize{
+    width: 50px;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+}
