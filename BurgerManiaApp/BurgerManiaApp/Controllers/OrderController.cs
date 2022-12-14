@@ -1,6 +1,8 @@
-﻿using BurgerManiaApp.Core.Contracts;
+﻿using System.Diagnostics;
+using BurgerManiaApp.Core.Contracts;
 using BurgerManiaApp.Core.Models.Order;
 using BurgerManiaApp.Extensions;
+using BurgerManiaApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -86,6 +88,12 @@ namespace BurgerManiaApp.Controllers
             model.UserCart = await cartService.GetOrCreateCart(userId);
 
             return View("CreateOrder", model);
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

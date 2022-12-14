@@ -4,6 +4,7 @@ using BurgerManiaApp.Core.Models.Products;
 using BurgerManiaApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace BurgerManiaApp.Controllers
 {
@@ -198,6 +199,12 @@ namespace BurgerManiaApp.Controllers
             var model = await productService.ProductDetailsById(id);
 
             return View(model);
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

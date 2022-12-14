@@ -4,7 +4,9 @@ using BurgerManiaApp.Core.Services;
 using BurgerManiaApp.Extensions;
 using BurgerManiaApp.Infractructure.Data.Common;
 using BurgerManiaApp.Infractructure.Data.Entities.Account;
+using BurgerManiaApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace BurgerManiaApp.Controllers
 {
@@ -53,6 +55,12 @@ namespace BurgerManiaApp.Controllers
             await cartService.UpdateQuantity(productAndQuantity);
 
             return RedirectToAction("Index");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

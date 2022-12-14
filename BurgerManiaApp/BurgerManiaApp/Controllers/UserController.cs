@@ -1,9 +1,11 @@
 ﻿using BurgerManiaApp.Core.Constants;
 using BurgerManiaApp.Infractructure.Data.Entities.Account;
+using BurgerManiaApp.Models;
 using BurgerManiaApp.Models.AccountViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace BurgerManiaApp.Controllers
 {
@@ -138,6 +140,12 @@ namespace BurgerManiaApp.Controllers
             await userManager.AddToRoleAsync(user, RoleConstants.Administrator);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
