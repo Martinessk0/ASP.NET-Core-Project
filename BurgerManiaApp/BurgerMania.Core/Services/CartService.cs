@@ -107,6 +107,7 @@ namespace BurgerManiaApp.Core.Services
                 .Any(p => p == x.Id)).Include(x => x.ShoppingCart)
                 .ToListAsync();
 
+
             foreach (var cartItem in cartItems)
             {
                 foreach (var p in productAndQuantity)

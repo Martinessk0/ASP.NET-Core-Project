@@ -306,6 +306,29 @@ namespace BurgerManiaApp.UnitTests
             //Assert.That(2, Is.EqualTo(await productService.GetProductCategoryId(2)));
         }
 
+        [Test]
+        public async Task TestAll()
+        {
+
+            var loggerMock = new Mock<ILogger<ProductService>>();
+            logger = loggerMock.Object;
+            var repo = new Repository(context);
+            productService = new ProductService(repo, logger);
+
+            await repo.AddRangeAsync(new List<Product>()
+            {
+                new Product(){ Id = 1, Name = "Spicy Burger1",Description = "Spicy Burger1",ImageUrl = "",Price = 7,CategoryId = 1,IsActive = true,},
+                new Product(){ Id = 2, Name = "Spicy Burger2",Description = "Spicy Burger2",ImageUrl = "",Price = 7,CategoryId = 1,IsActive = true,},
+                new Product(){ Id = 4, Name = "Spicy Burger3",Description = "Spicy Burger3",ImageUrl = "",Price = 7,CategoryId = 1,IsActive = true,},
+                new Product(){ Id = 3, Name = "Spicy Burger4",Description = "Spicy Burger4",ImageUrl = "",Price = 7,CategoryId = 1,IsActive = false,}
+            });
+
+            await repo.SaveChangesAsync();
+
+            var modelCollection = await productService.All();
+
+            Assert.That(3, Is.EqualTo(modelCollection.TotalProductsCount));
+        }
 
         [TearDown]
         public void TearDown()

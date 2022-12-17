@@ -13,13 +13,10 @@ namespace BurgerManiaApp.Core.Services
     public class OrderService : IOrderService
     {
         private readonly IRepository repo;
-        private readonly ApplicationDbContext _context;
 
-
-        public OrderService(IRepository repo, ApplicationDbContext context)
+        public OrderService(IRepository repo)
         {
             this.repo = repo;
-            _context = context;
         }
 
         public async Task<OrdersViewModel> GetAllOrders(string? userId)
@@ -84,14 +81,7 @@ namespace BurgerManiaApp.Core.Services
         public async Task<CurrentOrderViewModel> GetCurrentOrderInfo(int id,string userId)
         {
 
-            var orders = await _context.Orders
-                .Include(x => x.Products)
-                .ToListAsync();
-
-            var productsOrder = await repo.GetByIdAsync<Order>(id);
-
-
-            var order = await repo.AllReadonly<Order>()
+            var order = await repo.All<Order>()
                 .Where(x => x.Id == id)
                 .Include(x => x.OrderStatus)
                 .Include(x => x.Products)
@@ -104,15 +94,13 @@ namespace BurgerManiaApp.Core.Services
                     PhoneNumber = x.PhoneNumber,
                     DeliveryAddress = x.DeliveryAddress.StreetAddress,
                     City = x.DeliveryAddress.City,
+                    Products = x.Products.ToList(),
+                    TotalPrice = x.TotalOrderPrice(),
                     OrderDate = x.OrderDate.ToString(),
                 })
                 .FirstOrDefaultAsync();
 
-            foreach (var item in productsOrder.Products)
-            {
-                order.Products.Add(item);
-            }
-            order.TotalPrice = productsOrder.TotalOrderPrice();
+
 
             return order;
         }

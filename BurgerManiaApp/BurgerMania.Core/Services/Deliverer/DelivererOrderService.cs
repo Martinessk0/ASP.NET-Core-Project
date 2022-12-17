@@ -35,7 +35,7 @@ namespace BurgerManiaApp.Core.Services.Deliverer
                 if (item.Name == orderStatus)
                 {
                     orderStatusId = item.Id;
-                    continue;
+                    break;
                 }
             }
 
@@ -43,7 +43,11 @@ namespace BurgerManiaApp.Core.Services.Deliverer
             {
                 order.OrderStatusId = orderStatusId;
             }
-            repo.Update(order);
+
+            if (order != null)
+            {
+               repo.Update(order);
+            }
 
             await repo.SaveChangesAsync();
         }
