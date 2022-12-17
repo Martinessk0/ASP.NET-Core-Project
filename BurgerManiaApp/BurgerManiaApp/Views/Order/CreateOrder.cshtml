@@ -77,11 +77,10 @@
                                         <div class="d-flex justify-content-between align-items-center mb-4">
                                             <h5 class="mb-0">Orders details</h5>
                                         </div>
-
                                         <form asp-action="Checkout" asp-controller="Order" method="post" class="mt-4">
-                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                             <div class="row mb-4">
                                             <div class="col-md-6">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                                 <div class="form-outline form-white">
                                                     <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
                                                     <input asp-for="FirstName" type="text" id="typeFirstName" class="form-control form-control-lg"
