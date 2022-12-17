@@ -80,53 +80,60 @@
 
                                         <form asp-action="Checkout" asp-controller="Order" method="post" class="mt-4">
                                             <div class="row mb-4">
-                                                <div class="col-md-6">
-                                                    <div class="form-outline form-white">
-                                                        <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
-                                                        <input asp-for="FirstName" type="text" id="typeFirstName" class="form-control form-control-lg"
-                                                               placeholder="FirstName" size="7" minlength="3" maxlength="25"/>
-                                                        <label class="form-label" for="typeExp">FirstName</label>
-                                                    </div>
+                                            <div class="col-md-6">
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-outline form-white">
+                                                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                                                    <input asp-for="FirstName" type="text" id="typeFirstName" class="form-control form-control-lg"
+                                                           placeholder="FirstName" size="7" minlength="3" maxlength="25"/>
+                                                    <label class="form-label" for="typeExp">FirstName</label>
                                                 </div>
+                                            </div>
 
                                                 <div class="col-md-6">
                                                     <div class="form-outline form-white">
+                                                        <span asp-validation-for="@Model.LastName" class="text-danger"></span>
                                                         <input asp-for="LastName" type="text" id="typeLastName" class="form-control form-control-lg"
-                                                               placeholder="LastName" size="7" minlength="3" maxlength="25" />
+                                                               placeholder="LastName" size="7" minlength="3" maxlength="25"/>
                                                         <label class="form-label" for="typeText">LastName</label>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-outline form-white mb-4">
-                                                    <input asp-for="EmailAddress" type="text" id="typeEmail" class="form-control form-control-lg" siez="17"
-                                                           placeholder="Email" />
-                                                    <label class="form-label" for="typeName">Email</label>
-                                                </div>
+                                            <div class="form-outline form-white mb-4">
+                                                    <span asp-validation-for="@Model.EmailAddress" class="text-danger"></span>
+                                                <input asp-for="EmailAddress" type="text" id="typeEmail" class="form-control form-control-lg" siez="17"
+                                                       placeholder="Email"/>
+                                                <label class="form-label" for="typeName">Email</label>
+                                            </div>
 
-                                                <div class="form-outline form-white mb-4">
-                                                    <input asp-for="StreetAddress" type="text" id="typeAddress" class="form-control form-control-lg" siez="17"
-                                                           placeholder="Address" />
-                                                    <label class="form-label" for="typeName">Address</label>
-                                                </div>
+                                            <div class="form-outline form-white mb-4">
+                                                    <span asp-validation-for="@Model.StreetAddress" class="text-danger"></span>
+                                                <input asp-for="StreetAddress" type="text" id="typeAddress" class="form-control form-control-lg" siez="17"
+                                                       placeholder="Address"/>
+                                                <label class="form-label" for="typeName">Address</label>
+                                            </div>
 
-                                                <div class="form-outline form-white mb-4">
-                                                    <input asp-for="PhoneNumber" type="text" id="typePhoneNumber" class="form-control form-control-lg" siez="17"
-                                                           placeholder="+359 88 888 8888" minlength="9" maxlength="16" />
-                                                    <label class="form-label" for="typeText">Phone Number</label>
-                                                </div>
+                                            <div class="form-outline form-white mb-4">
+                                                    <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+                                                <input asp-for="PhoneNumber" type="text" id="typePhoneNumber" class="form-control form-control-lg" siez="17"
+                                                       placeholder="+359 88 888 8888" minlength="9" maxlength="16"/>
+                                                <label class="form-label" for="typeText">Phone Number</label>
+                                            </div>
 
                                                 <div class="row mb-4">
                                                     <div class="col-md-6">
                                                         <div class="form-outline form-white">
+                                                            <span asp-validation-for="@Model.City" class="text-danger"></span>
                                                             <input asp-for="City" type="text" id="typeCity" class="form-control form-control-lg"
-                                                                   placeholder="City" size="7" id="city" minlength="5" maxlength="20" />
+                                                                   placeholder="City" size="7" id="city" minlength="5" maxlength="20"/>
                                                             <label class="form-label" for="typeCity">City</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-outline form-white">
+                                                            <span asp-validation-for="@Model.PostalCode" class="text-danger"></span>
                                                             <input asp-for="PostalCode" type="text" id="typePostCode" class="form-control form-control-lg"
-                                                                   placeholder="1000" size="7" minlength="2" maxlength="6" />
+                                                                   placeholder="1000" size="7" minlength="2" maxlength="6"/>
                                                             <label class="form-label" for="typePostCode">Post Code</label>
                                                         </div>
                                                     </div>
