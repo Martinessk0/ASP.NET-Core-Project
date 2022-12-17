@@ -168,20 +168,20 @@ namespace BurgerManiaApp.UnitTests
         //        new OrderStatus() { Id = 4, Name = "Cancelled"},
         //    });
         //    var order = new Order("b416372a-0acf-443d-a28f-a040a62bc8c7")
-        //        {
-        //            Id = 1,
-        //            BuyerId = "b416372a-0acf-443d-a28f-a040a62bc8c7",
-        //            Email = "testov@gmail.com",
-        //            FullName = "Test Testov",
-        //            OrderNumber = "asdfgf",
-        //            PhoneNumber = "+359886543930",
-        //            OrderStatusId = 1,
-        //            DeliveryAddress = new DeliveryAddress("yl.Marica 5", "2700", "Blagoevgrad", "Smth"),
-        //            Products = new List<ShoppingCartItem>()
+        //    {
+        //        Id = 1,
+        //        BuyerId = "b416372a-0acf-443d-a28f-a040a62bc8c7",
+        //        Email = "testov@gmail.com",
+        //        FullName = "Test Testov",
+        //        OrderNumber = "asdfgf",
+        //        PhoneNumber = "+359886543930",
+        //        OrderStatusId = 1,
+        //        DeliveryAddress = new DeliveryAddress("yl.Marica 5", "2700", "Blagoevgrad", "Smth"),
+        //        Products = new List<ShoppingCartItem>()
         //            {
         //                new ShoppingCartItem(1,"Cola",7,"",2),
         //            },
-        //        };
+        //    };
         //    await repo.AddAsync(order);
 
         //    await repo.SaveChangesAsync();

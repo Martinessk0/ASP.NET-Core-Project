@@ -27,7 +27,7 @@ namespace BurgerManiaApp.Infrastructure.Data.Entities
         [StringLength(PhoneNumberMaxLength)]
         public string PhoneNumber { get; set; }
 
-        public DateTimeOffset OrderDate { get; private set; } = DateTimeOffset.Now;
+        public DateTimeOffset OrderDate { get; private set; } = DateTimeOffset.UtcNow;
 
         public DeliveryAddress DeliveryAddress { get; set; }
 

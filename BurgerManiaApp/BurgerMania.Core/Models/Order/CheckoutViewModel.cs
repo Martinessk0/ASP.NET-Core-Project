@@ -16,9 +16,8 @@ namespace BurgerManiaApp.Core.Models.Order
         [StringLength(StreetAddressMaxLength,MinimumLength = StreetAddressMinLength)]
         public string StreetAddress { get; set; } = null!;
 
-        [Required]
-        [StringLength(AddressNameMaxLength, MinimumLength = AddressNameMinLength)]
-        public string AddressName { get; set; } = null!;
+        //[StringLength(AddressNameMaxLength, MinimumLength = AddressNameMinLength)]
+        public string? AddressName { get; set; }
 
         [StringLength(CityMaxLength, MinimumLength = CityMinLength)]
         public string City { get; set; } = null!;

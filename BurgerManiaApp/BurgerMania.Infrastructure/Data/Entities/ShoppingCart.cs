@@ -42,11 +42,6 @@ namespace BurgerManiaApp.Infractructure.Data.Entities
         {
             CartProducts.RemoveAll(i => i.Quantity == 0);
         }
-
-        public void SetNewBuyerId(string buyerId)
-        {
-            BuyerId = buyerId;
-        }
     }
 }
 

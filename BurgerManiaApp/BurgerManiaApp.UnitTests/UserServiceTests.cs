@@ -3,6 +3,7 @@ using BurgerManiaApp.Core.Services.Admin;
 using BurgerManiaApp.Core.Services.Deliverer;
 using BurgerManiaApp.Infractructure.Data.Common;
 using BurgerManiaApp.Infrastructure.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BurgerManiaApp.UnitTests
@@ -14,36 +15,36 @@ namespace BurgerManiaApp.UnitTests
         private IRoleService roleService;
         private ApplicationDbContext context;
 
-        //[SetUp]
-        //public void Setup()
-        //{
-        //    var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-        //        .UseInMemoryDatabase("BurgerDb")
-        //        .EnableSensitiveDataLogging()
-        //        .Options;
+        [SetUp]
+        public void Setup()
+        {
+            var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase("BurgerDb")
+                .EnableSensitiveDataLogging()
+                .Options;
 
-        //    context = new ApplicationDbContext(contextOptions);
-
-
-
-        //    context.Database.EnsureDeletedAsync();
-        //    context.Database.EnsureCreatedAsync();
-        //}
-
-        ////[Test]
-        ////public async Task TestAllUsers()
-        ////{
-        ////    var repo = new Repository(context);
-        ////    roleService = new RoleService()
-        ////    userService = new UserService(repo);
-
-        ////}
+            context = new ApplicationDbContext(contextOptions);
 
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    context.Dispose();
-        //}
+
+            context.Database.EnsureDeletedAsync();
+            context.Database.EnsureCreatedAsync();
+        }
+
+        [Test]
+        public async Task TestAllUsers()
+        {
+            var repo = new Repository(context);
+            //roleService = new RoleService(new AspNetRoleManager<IdentityRole>());
+            userService = new UserService(repo,roleService);
+
+        }
+
+
+        [TearDown]
+        public void TearDown()
+        {
+            context.Dispose();
+        }
     }
 }
