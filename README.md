@@ -32,3 +32,6 @@ Guests can:
 - register/login;
 - most pages don't allow annonymous.
 
+## DB Scheme
+![](images/db.png)
+
