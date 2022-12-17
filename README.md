@@ -32,6 +32,20 @@ Guests can:
 - register/login;
 - most pages don't allow annonymous.
 
+## Technologies and Tools
++ ASP.NET Core 6.0
+	+ MVC
++ ASP.NET-Core-Template by [Bootstrap] (https://getbootstrap.com/)
++ Entity Framework Core 6.0
++ NUnit
++ Moq
++ JavaScript
++ HTML 5
++ CSS
++ Bootstrap
++ FontAwesome
++ Azure Portal
+
 ## DB Scheme
 ![](images/Db.png)
 
