@@ -33,5 +33,5 @@ Guests can:
 - most pages don't allow annonymous.
 
 ## DB Scheme
-![](images/db.png)
+![](images/Db.png)
 
