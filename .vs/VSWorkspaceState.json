@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BurgerManiaApp",
+    "\\BurgerManiaApp\\BurgerMania.Infrastructure",
+    "\\BurgerManiaApp\\BurgerMania.Infrastructure\\Data",
+    "\\BurgerManiaApp\\BurgerMania.Infrastructure\\Data\\Configuration"
+  ],
+  "SelectedNode": "\\BurgerManiaApp\\BurgerMania.Infrastructure\\Data\\Configuration\\OrderStatusConfiguration.cs",
+  "PreviewInSolutionExplorer": false
+}

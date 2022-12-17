@@ -36,6 +36,7 @@ namespace BurgerManiaApp.Core.Services.Admin
         public async Task<UsersViewModel> All()
         {
             var result = new UsersViewModel();
+            
 
             var users = await repo.AllReadonly<User>()
                 .Select(o => new UserServiceModel()
@@ -44,14 +45,22 @@ namespace BurgerManiaApp.Core.Services.Admin
                     Email = o.Email,
                     FullName = $"{o.FirstName} {o.LastName}",
                     PhoneNumber = o.PhoneNumber,
-                    Roles = roleService.GetRolesForThisUser(o.Id).Result.ToList(),
+                    //Roles = roleService.GetRolesForThisUser(o.Id).Result.ToList(),
                 })
                 .OrderBy(x => x.Email)
                 .ToListAsync();
+
+            foreach (var user in users)
+            {
+                List<string> roles = new List<string>();
+                var model = await roleService.GetRolesForThisUser(user.Id);
+                user.Roles = model;
+            }
 
             result.Users.AddRange(users);
 
             return result;
         }
+
     }
 }

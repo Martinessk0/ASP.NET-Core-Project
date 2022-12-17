@@ -82,8 +82,9 @@
                                             <div class="row mb-4">
                                                 <div class="col-md-6">
                                                     <div class="form-outline form-white">
+                                                        <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
                                                         <input asp-for="FirstName" type="text" id="typeFirstName" class="form-control form-control-lg"
-                                                               placeholder="FirstName" size="7" minlength="3" maxlength="25" />
+                                                               placeholder="FirstName" size="7" minlength="3" maxlength="25"/>
                                                         <label class="form-label" for="typeExp">FirstName</label>
                                                     </div>
                                                 </div>

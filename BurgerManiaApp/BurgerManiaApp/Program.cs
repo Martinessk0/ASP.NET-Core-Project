@@ -45,8 +45,9 @@ builder.Services.AddSession(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsProduction())
 {
+    app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
 }
 else

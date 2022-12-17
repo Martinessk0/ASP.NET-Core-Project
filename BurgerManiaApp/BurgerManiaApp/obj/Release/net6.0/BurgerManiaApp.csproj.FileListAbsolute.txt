@@ -282,3 +282,5 @@ E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaAp
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Release\net6.0\BurgerManiaApp.pdb
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Release\net6.0\BurgerManiaApp.genruntimeconfig.cache
 E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Release\net6.0\ref\BurgerManiaApp.dll
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Release\net6.0\BurgerManiaApp.Properties.Resources.resources
+E:\GitHub\ASP.NET Core Project\ASP.NET-Core-Project\BurgerManiaApp\BurgerManiaApp\obj\Release\net6.0\BurgerManiaApp.csproj.GenerateResource.cache

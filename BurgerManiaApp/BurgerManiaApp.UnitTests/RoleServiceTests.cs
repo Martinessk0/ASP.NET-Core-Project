@@ -21,37 +21,37 @@ namespace BurgerManiaApp.UnitTests
         private UserManager<User> userManager;
         private RoleManager<IdentityRole> roleManager;
 
-        [SetUp]
-        public void Setup()
-        {
-            var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("BurgerDb")
-                .EnableSensitiveDataLogging()
-                .Options;
-
-            context = new ApplicationDbContext(contextOptions);
-
-
-
-            context.Database.EnsureDeletedAsync();
-            context.Database.EnsureCreatedAsync();
-        }
-
-        //[Test]
-        //public async Task TestAddRole()
+        //[SetUp]
+        //public void Setup()
         //{
-        //    var repo = new Repository(context);
-        //    userManager = new UserManager<User>();
-        //    roleManager = new RoleManager<IdentityRole>();
-        //    roleService = new UserService(roleManager, userManager);
+        //    var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
+        //        .UseInMemoryDatabase("BurgerDb")
+        //        .EnableSensitiveDataLogging()
+        //        .Options;
 
+        //    context = new ApplicationDbContext(contextOptions);
+
+
+
+        //    context.Database.EnsureDeletedAsync();
+        //    context.Database.EnsureCreatedAsync();
         //}
 
+        ////[Test]
+        ////public async Task TestAddRole()
+        ////{
+        ////    var repo = new Repository(context);
+        ////    userManager = new UserManager<User>();
+        ////    roleManager = new RoleManager<IdentityRole>();
+        ////    roleService = new UserService(roleManager, userManager);
 
-        [TearDown]
-        public void TearDown()
-        {
-            context.Dispose();
-        }
+        ////}
+
+
+        //[TearDown]
+        //public void TearDown()
+        //{
+        //    context.Dispose();
+        //}
     }
 }

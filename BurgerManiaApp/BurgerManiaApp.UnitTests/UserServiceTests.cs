@@ -14,36 +14,36 @@ namespace BurgerManiaApp.UnitTests
         private IRoleService roleService;
         private ApplicationDbContext context;
 
-        [SetUp]
-        public void Setup()
-        {
-            var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("BurgerDb")
-                .EnableSensitiveDataLogging()
-                .Options;
-
-            context = new ApplicationDbContext(contextOptions);
-
-
-
-            context.Database.EnsureDeletedAsync();
-            context.Database.EnsureCreatedAsync();
-        }
-
-        //[Test]
-        //public async Task TestAllUsers()
+        //[SetUp]
+        //public void Setup()
         //{
-        //    var repo = new Repository(context);
-        //    roleService = new RoleService()
-        //    userService = new UserService(repo);
+        //    var contextOptions = new DbContextOptionsBuilder<ApplicationDbContext>()
+        //        .UseInMemoryDatabase("BurgerDb")
+        //        .EnableSensitiveDataLogging()
+        //        .Options;
 
+        //    context = new ApplicationDbContext(contextOptions);
+
+
+
+        //    context.Database.EnsureDeletedAsync();
+        //    context.Database.EnsureCreatedAsync();
         //}
 
+        ////[Test]
+        ////public async Task TestAllUsers()
+        ////{
+        ////    var repo = new Repository(context);
+        ////    roleService = new RoleService()
+        ////    userService = new UserService(repo);
 
-        [TearDown]
-        public void TearDown()
-        {
-            context.Dispose();
-        }
+        ////}
+
+
+        //[TearDown]
+        //public void TearDown()
+        //{
+        //    context.Dispose();
+        //}
     }
 }
